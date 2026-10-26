@@ -140,9 +140,7 @@ npm run test:ui
 
 See [validation evidence](docs/VALIDATION.md), [architecture and coordinate conventions](docs/ARCHITECTURE.md), and [contribution guidance](CONTRIBUTING.md). The [CI workflow](.github/workflows/ci.yml) configures Python tests, the frontend build and portable-wheel verification on Linux and macOS. Linux also runs the browser workflow and WCAG-tagged automated accessibility checks; the targeted mobile capture check is separate.
 
-## Relationship to upstream work
-
-[VGGT](https://github.com/facebookresearch/vggt), [CAD-Recode](https://github.com/filaPro/cad-recode), [cadrille](https://github.com/col14m/cadrille), [PartCrafter](https://github.com/wgsxm/PartCrafter), and [CadQuery](https://github.com/CadQuery/cadquery) informed this implementation. CadQuery is the actual CAD backend. The other neural systems were studied, not reproduced as local baselines. Their published scores are not comparable to ObjectDNA's small synthetic test.
+## Optional image reconstruction
 
 `scripts/extract_frames.py` extracts video frames with FFmpeg. `scripts/vggt_to_scan.py` accepts separately installed VGGT and locally supplied weights, producing relative XYZ points without automatically downloading checkpoints or accepting licenses. Its end-to-end inference is not verified. Crop the object, inspect the reconstructed geometry, and calibrate scale before metric export.
 
