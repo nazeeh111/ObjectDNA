@@ -217,8 +217,8 @@ function makeDimension(a, b, text) {
   const canvas = document.createElement('canvas'); canvas.width = 512; canvas.height = 96;
   const ctx = canvas.getContext('2d'); ctx.font = '500 40px monospace';
   const width = Math.min(500, ctx.measureText(text).width + 40);
-  ctx.fillStyle = '#f3f1eb'; ctx.fillRect(256-width/2, 10, width, 72);
-  ctx.fillStyle = '#9d4c2b'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 256, 48);
+  ctx.fillStyle = '#222b35'; ctx.fillRect(256-width/2, 10, width, 72);
+  ctx.fillStyle = '#ffb78b'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(text, 256, 48);
   const texture = new THREE.CanvasTexture(canvas);
   const sprite = new THREE.Sprite(new THREE.SpriteMaterial({map:texture, transparent:true, depthTest:false}));
   sprite.position.copy(a).add(b).multiplyScalar(0.5); sprite.scale.set(s*.38, s*.071,1); group.add(sprite);
@@ -233,9 +233,9 @@ function renderGeometry(data, keepCamera = false) {
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute('position', new THREE.Float32BufferAttribute(mesh.vertices.flat(), 3));
     geometry.setIndex(mesh.faces.flat()); geometry.computeVertexNormals();
-    const material = new THREE.MeshStandardMaterial({color: 0x749d9a, metalness:0.18, roughness:0.5, side:THREE.DoubleSide, polygonOffset:true, polygonOffsetFactor:1, polygonOffsetUnits:1});
+    const material = new THREE.MeshStandardMaterial({color: 0xa7b3bc, metalness:0.18, roughness:0.5, side:THREE.DoubleSide, polygonOffset:true, polygonOffsetFactor:1, polygonOffsetUnits:1});
     const solid = new THREE.Mesh(geometry, material);
-    const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geometry, 25), new THREE.LineBasicMaterial({color:0x244f50, transparent:true,opacity:0.85}));
+    const edges = new THREE.LineSegments(new THREE.EdgesGeometry(geometry, 25), new THREE.LineBasicMaterial({color:0x3b4652, transparent:true,opacity:0.85}));
     state.model = new THREE.Group(); state.model.add(solid,edges); state.scene.add(state.model);
     all.push(...mesh.vertices);
   }
@@ -248,7 +248,7 @@ function renderGeometry(data, keepCamera = false) {
     const box = new THREE.Box3().setFromPoints(all.map(p=>new THREE.Vector3(...p)));
     state.center = box.getCenter(new THREE.Vector3()); state.size = Math.max(...box.getSize(new THREE.Vector3()).toArray(), 1);
     const gridSize = state.size * 3.5;
-    state.grid = new THREE.GridHelper(gridSize, 35, 0xcaccc2, 0xd9dcd3); state.grid.rotation.x = Math.PI / 2; state.grid.position.set(state.center.x,state.center.y,box.min.z - state.size*.015); state.grid.material.transparent = true; state.grid.material.opacity=.48; state.scene.add(state.grid);
+    state.grid = new THREE.GridHelper(gridSize, 35, 0x748497, 0x445366); state.grid.rotation.x = Math.PI / 2; state.grid.position.set(state.center.x,state.center.y,box.min.z - state.size*.015); state.grid.material.transparent = true; state.grid.material.opacity=.24; state.scene.add(state.grid);
     const p = data.spec?.parameters;
     if (p) {
       state.dimensions = new THREE.Group(); const offset = state.size*.12;
