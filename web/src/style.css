@@ -92,7 +92,7 @@ button:active{transform:translateY(1px);}
 .tree-item>span:last-child{font-size:10px;}
 .tree-item small{font:8px var(--mono);display:block;margin-top:4px;}
 .feature-note{margin-top:17px;}
-.sidebar-footer{display:flex;align-items:center;gap:10px;padding:20px;font-size:10px;color:#68745f;}
+.sidebar-footer{display:flex;align-items:center;gap:10px;padding:20px;font-size:10px;color:var(--muted);}
 .sidebar-footer small{display:block;font-size:8px;margin-top:4px;}
 .tiny-dna{border-width:1px;border-style:solid;font:11px var(--mono);width:32px;height:32px;display:grid;place-items:center;border-radius:6px;}
 .viewport-column{display:flex;flex-direction:column;min-width:0;}
