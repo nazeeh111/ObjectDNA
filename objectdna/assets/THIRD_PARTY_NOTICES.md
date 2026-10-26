@@ -10,3 +10,9 @@ The distributable workbench bundles Three.js (including OrbitControls) and Vite'
 Python libraries and build/test dependencies are installed separately from the pinned requirements. Their licenses remain with their distributions; no Python dependency binaries are bundled in ObjectDNA's source archive or wheel. CadQuery's Apache 2.0 and OpenCascade's applicable terms are distinct from ObjectDNA's MIT source license.
 
 Optional pretrained systems are not bundled or downloaded by default. Code, checkpoint and dataset terms differ; see `docs/UPSTREAM_LICENSES.md`. In particular, the application license does not relicense noncommercial checkpoints from other projects.
+
+## Scope of the project license
+
+This license covers original ObjectDNA source and procedural data/weights.
+Bundled real-world scans retain CC BY 4.0, see data/real/provenance.json.
+Third-party dependencies and optional upstream models keep their own licenses.

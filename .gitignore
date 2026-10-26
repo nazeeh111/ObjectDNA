@@ -18,3 +18,11 @@ results/release-manifest.json
 /runs/
 
 /.ruff_cache/
+
+# These small, verified runtime assets are intentionally distributed.
+# Override machine-wide dist/ ignores without changing global Git settings.
+!/web/dist/
+!/web/dist/**
+!/objectdna/assets/web/
+!/objectdna/assets/web/dist/
+!/objectdna/assets/web/dist/**
