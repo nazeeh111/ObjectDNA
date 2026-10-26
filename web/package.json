@@ -1,0 +1,22 @@
+{
+  "name": "objectdna-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:ui": "node tests/smoke.mjs",
+    "test:a11y": "node tests/accessibility.mjs",
+    "demo:preview": "node scripts/preview.mjs"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "vite": "^7.1.7"
+  }
+}

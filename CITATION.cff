@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use ObjectDNA's implementation or experiments, cite this software. Cite upstream methods separately when using them."
+title: ObjectDNA
+version: 0.1.0
+type: software
+authors:
+  - family-names: Abdul-Hadi
+    given-names: Nazeeh
+repository-code: "https://github.com/nazeeh111/ObjectDNA"
+url: "https://github.com/nazeeh111/ObjectDNA"
+license: MIT
+abstract: "A local scan-to-editable-CAD workbench for bounded engineering-part families, with learned parameter proposals, explicit uncertainty, exact solid exports, and reproducible geometric evaluation."
+keywords:
+  - parametric CAD
+  - reverse engineering
+  - point clouds
+  - geometric learning
+  - CadQuery

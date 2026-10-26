@@ -1,0 +1,3 @@
+recursive-include objectdna/assets *
+include LICENSE
+include README.md

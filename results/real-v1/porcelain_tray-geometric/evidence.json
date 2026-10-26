@@ -1,0 +1,216 @@
+{
+  "spec": {
+    "family": "enclosure",
+    "parameters": {
+      "width": 165.27965546418145,
+      "depth": 311.22912540085855,
+      "height": 32.36187101184017,
+      "thickness": 11.944240181507928
+    },
+    "holes": []
+  },
+  "metrics": {
+    "observed_rmse_mm": 2.9580312882310404,
+    "chamfer_mm": 4.85200786794032,
+    "observed_support": 0.8273333333333334,
+    "surface_coverage": 0.6778,
+    "accepted": false,
+    "volumetric_iou": null,
+    "dimensional_error_mm": null,
+    "validity": true,
+    "valid": true,
+    "volume_mm3": 835173.6545722318,
+    "solid_count": 1,
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max": [
+        165.27965546418145,
+        311.22912540085855,
+        32.36187101184017
+      ],
+      "size": [
+        165.27965546418145,
+        311.22912540085855,
+        32.36187101184017
+      ]
+    },
+    "scan_to_cad_sampled_chamfer_mm": 5.077111843335217,
+    "ground_truth_volume_iou": null,
+    "independent_dimensional_error_mm": null
+  },
+  "uncertainty": [
+    {
+      "feature": "External extents",
+      "status": "observed",
+      "detail": "Robust scan bounds fitted to observed surface evidence; not an independent dimensional measurement."
+    },
+    {
+      "feature": "Wall thickness / feature family",
+      "status": "inferred",
+      "detail": "Selected within the bounded CAD grammar; verify with a physical measurement."
+    },
+    {
+      "feature": "Hidden surfaces and internal features",
+      "status": "unknown",
+      "detail": "Unseen geometry cannot be recovered from these points. Candidate completes the chosen template."
+    },
+    {
+      "feature": "Absolute scale",
+      "status": "calibrated",
+      "detail": "Declared input units or maximum-extent reference used."
+    }
+  ],
+  "candidates": [
+    {
+      "family": "enclosure",
+      "score": 0.027189571109732198,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 165.27965546418145,
+          "depth": 311.22912540085855,
+          "height": 32.36187101184017,
+          "thickness": 11.944240181507928
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "enclosure",
+      "score": 0.02784444109941805,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 166.89795279600003,
+          "depth": 312.18192934800004,
+          "height": 33.710282303999996,
+          "thickness": 11.083
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "enclosure",
+      "score": 0.027885105390167263,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 166.89795279600003,
+          "depth": 312.18192934800004,
+          "height": 33.710282303999996,
+          "thickness": 11.72
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "enclosure",
+      "score": 0.028002266467832722,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 166.89795279600003,
+          "depth": 312.18192934800004,
+          "height": 33.710282303999996,
+          "thickness": 10.787
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "enclosure",
+      "score": 0.031173869680703334,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 166.89795279600003,
+          "depth": 312.18192934800004,
+          "height": 33.710282303999996,
+          "thickness": 7.753
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "enclosure",
+      "score": 0.03229922602778334,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 166.89795279600003,
+          "depth": 312.18192934800004,
+          "height": 33.710282303999996,
+          "thickness": 7.171
+        },
+        "holes": []
+      }
+    }
+  ],
+  "warnings": [
+    "Single-solid reconstruction within a limited grammar; no material, load capacity, fit or mechanical function is established.",
+    "Low evidence support: this candidate is a hypothesis. Inspect residuals and unsupported surfaces before use.",
+    "The filled block is an external envelope hypothesis. Actual shell, contents and hidden structure are unknown. No independent caliper ground truth exists."
+  ],
+  "provenance": {
+    "transform": {
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "translation": [
+        -83.411104664,
+        -155.872216924,
+        0.460853504
+      ],
+      "pca_center": null,
+      "scale": 1.0,
+      "pca_alignment": false,
+      "input_units": "mm",
+      "calibrated": true,
+      "reference_extent_mm": null,
+      "removed_points": 0
+    },
+    "ranking": "geometric",
+    "ranker_version": null,
+    "refined": true,
+    "learned_proposal": false,
+    "scope": "three-family orthogonal single-solid grammar",
+    "dataset": {
+      "name": "Threshold_Tray_Rectangle_Porcelain",
+      "archive_sha256": "02d4670faedb0befcf875f0f57df185210d442f7025baaa6f1ab864bd6fcec57",
+      "intended_use": "Failure/stress example: flared walls, rounded corners, and feet are outside the uniform-wall enclosure grammar.",
+      "owner": "GoogleResearch",
+      "copyright": "Copyright 2020 Google LLC.",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_url": "https://app.gazebosim.org/GoogleResearch/fuel/models/Threshold_Tray_Rectangle_Porcelain",
+      "archive_url": "https://fuel.gazebosim.org/1.0/GoogleResearch/models/Threshold_Tray_Rectangle_Porcelain/1/Threshold_Tray_Rectangle_Porcelain.zip",
+      "version": 1,
+      "mesh_sha256": "a37913eabcfdae48d8f7f4be857ecffd914f9fe97a0c76cc2853f8fb0a8d8829",
+      "xyz_sha256": "648d48fb16d010e088d78218f02298fc20abd37266bbc783ec5b2f6b1a701ddb",
+      "processing": "Area-weighted surface sampling of published processed OBJ scan mesh; 12000 samples; NumPy default_rng seed 20261025; coordinates multiplied by 1000 from SDF SI metres to mm. No denoising, alignment, or fitting applied.",
+      "physical_capture_evidence": "https://research.google/blog/scanned-objects-by-google-research-a-dataset-of-3d-scanned-common-household-items/",
+      "independent_measured_dimensions_mm": null,
+      "limits": "Published mesh is a simplified processed physical scan, not raw sensor input. Reconstructed distances are scan-relative; manufacturing accuracy and hidden structure are unverified. Packaging shell thickness and material are unknown."
+    }
+  },
+  "runtime_seconds": 2.2354312499519438,
+  "units": "mm"
+}

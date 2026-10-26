@@ -1,0 +1,239 @@
+[
+  {
+    "seed": 4000,
+    "family": "bracket",
+    "noise_fraction_diagonal": 0.0011318496508036886,
+    "partial": true,
+    "truth": {
+      "family": "bracket",
+      "parameters": {
+        "width": 66.36891031403736,
+        "depth": 79.38217474856621,
+        "height": 26.94748370662525,
+        "thickness": 4.958160342994226
+      },
+      "holes": []
+    },
+    "scan_sha256": "5011fe1468e08e6502b8176d316904e8b12dd48f5576848c8e7fde866c63e509"
+  },
+  {
+    "seed": 4001,
+    "family": "enclosure",
+    "noise_fraction_diagonal": 0.0005066295945418568,
+    "partial": false,
+    "truth": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 35.315740238064365,
+        "depth": 58.17485185700053,
+        "height": 31.938442742680245,
+        "thickness": 2.2812278910872443
+      },
+      "holes": []
+    },
+    "scan_sha256": "2e233721121952e085588cb27d90b045cbe6a4da0e88b6ff84fa2f1844ba03d2"
+  },
+  {
+    "seed": 4002,
+    "family": "block",
+    "noise_fraction_diagonal": 0.0029213879420461565,
+    "partial": false,
+    "truth": {
+      "family": "block",
+      "parameters": {
+        "width": 77.32141752000351,
+        "depth": 71.43793504059315,
+        "height": 21.284239089760884,
+        "thickness": 2.662249137719847
+      },
+      "holes": [
+        {
+          "x": 23.196425256001053,
+          "y": 35.71896752029657,
+          "radius": 6.630565321005357
+        },
+        {
+          "x": 54.12499226400245,
+          "y": 35.71896752029657,
+          "radius": 6.630565321005357
+        }
+      ]
+    },
+    "scan_sha256": "42b299232a722ad6adec79b56c3b1647c198f9dee430f241d039a0f70c539e89"
+  },
+  {
+    "seed": 4003,
+    "family": "bracket",
+    "noise_fraction_diagonal": 0.002163968476045609,
+    "partial": false,
+    "truth": {
+      "family": "bracket",
+      "parameters": {
+        "width": 38.206436655111695,
+        "depth": 36.30042522512489,
+        "height": 22.99738767224434,
+        "thickness": 3.6267020849140286
+      },
+      "holes": []
+    },
+    "scan_sha256": "096ea0494367a8601d3afed539fb72e26bf2d223b4517deccac767660682383e"
+  },
+  {
+    "seed": 4004,
+    "family": "enclosure",
+    "noise_fraction_diagonal": 0.0008725308252674152,
+    "partial": true,
+    "truth": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 94.26675440318066,
+        "depth": 67.19560895996918,
+        "height": 47.61547520838277,
+        "thickness": 3.3421273411690398
+      },
+      "holes": []
+    },
+    "scan_sha256": "b489923793576779d0d620b3e59fe7437bc6f7a37a747db63cc5550012991f22"
+  },
+  {
+    "seed": 4005,
+    "family": "block",
+    "noise_fraction_diagonal": 0.0014907883148190177,
+    "partial": false,
+    "truth": {
+      "family": "block",
+      "parameters": {
+        "width": 104.21373756411965,
+        "depth": 42.46143207757198,
+        "height": 47.344461054111825,
+        "thickness": 7.422761960374855
+      },
+      "holes": []
+    },
+    "scan_sha256": "d9ed2876585c83388cfdcbaee572028a9af45a08da691da9dd57e65778f13541"
+  },
+  {
+    "seed": 4006,
+    "family": "bracket",
+    "noise_fraction_diagonal": 0.0033235429955630245,
+    "partial": false,
+    "truth": {
+      "family": "bracket",
+      "parameters": {
+        "width": 66.34518772680816,
+        "depth": 65.4450466483505,
+        "height": 36.72950861381939,
+        "thickness": 3.5594644873146497
+      },
+      "holes": []
+    },
+    "scan_sha256": "722beb7af00227112058a647e1270a183e743a08389f226d59a347fe112f4fd3"
+  },
+  {
+    "seed": 4007,
+    "family": "enclosure",
+    "noise_fraction_diagonal": 0.0010705231501934344,
+    "partial": false,
+    "truth": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 65.04450441690149,
+        "depth": 74.0002840239383,
+        "height": 60.97320303597465,
+        "thickness": 3.3242465872306988
+      },
+      "holes": []
+    },
+    "scan_sha256": "aa60d2618d00eaf7af315b224a6df8fafdc42fd1efe3b07c7231f868b9b6d487"
+  },
+  {
+    "seed": 4008,
+    "family": "block",
+    "noise_fraction_diagonal": 0.0031920070249328745,
+    "partial": true,
+    "truth": {
+      "family": "block",
+      "parameters": {
+        "width": 56.111166898455345,
+        "depth": 62.1002873955274,
+        "height": 47.75671503963319,
+        "thickness": 7.320787429868809
+      },
+      "holes": [
+        {
+          "x": 16.833350069536603,
+          "y": 31.0501436977637,
+          "radius": 4.487682087274595
+        },
+        {
+          "x": 39.27781682891874,
+          "y": 31.0501436977637,
+          "radius": 4.487682087274595
+        }
+      ]
+    },
+    "scan_sha256": "b2be8486a265462716ba08f2b18d150c6b68def7a379b71afdf9a31ae419b4c8"
+  },
+  {
+    "seed": 4009,
+    "family": "bracket",
+    "noise_fraction_diagonal": 0.002603990848770693,
+    "partial": false,
+    "truth": {
+      "family": "bracket",
+      "parameters": {
+        "width": 57.879889286589304,
+        "depth": 47.9399203478426,
+        "height": 18.226302982730065,
+        "thickness": 2.9206422203825193
+      },
+      "holes": []
+    },
+    "scan_sha256": "6de0025a82fb25f40e630808f9f139feab9f7c28752ca50172520fc0b8e707d8"
+  },
+  {
+    "seed": 4010,
+    "family": "enclosure",
+    "noise_fraction_diagonal": 0.0008132015181293683,
+    "partial": false,
+    "truth": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 45.141920194660344,
+        "depth": 39.61674977295716,
+        "height": 52.60805543933409,
+        "thickness": 7.473574209070641
+      },
+      "holes": []
+    },
+    "scan_sha256": "20e7d2c78f4fb9589963fefc000f5e888a9a5ad3d3620d0cb3359394913f1dc3"
+  },
+  {
+    "seed": 4011,
+    "family": "block",
+    "noise_fraction_diagonal": 0.0013359041702475571,
+    "partial": false,
+    "truth": {
+      "family": "block",
+      "parameters": {
+        "width": 31.47198622068844,
+        "depth": 76.16439492638615,
+        "height": 40.24819474423613,
+        "thickness": 5.27018640008557
+      },
+      "holes": [
+        {
+          "x": 9.441595866206532,
+          "y": 38.082197463193076,
+          "radius": 2.9607175106124126
+        },
+        {
+          "x": 22.030390354481906,
+          "y": 38.082197463193076,
+          "radius": 2.9607175106124126
+        }
+      ]
+    },
+    "scan_sha256": "8833736b1a37414d6c2503d0ed3973f3258a7ab42e4224b28c99a17821dc8009"
+  }
+]

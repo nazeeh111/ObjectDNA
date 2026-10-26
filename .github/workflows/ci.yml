@@ -1,0 +1,72 @@
+name: Validate ObjectDNA
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    name: Python / ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            requirements-tested.txt
+            requirements-dev.txt
+            pyproject.toml
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Native Linux libraries
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libgl1 libglu1-mesa libxrender1 libxext6
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m pip install --no-deps -e .
+      - run: npm ci --ignore-scripts && npm run build
+        working-directory: web
+      - run: python scripts/build_assets.py --check
+      - run: ruff check objectdna scripts tests tools && ruff format --check objectdna scripts tests tools
+      - run: python -m pytest -q
+      - name: Build and verify portable wheel
+        run: |
+          python -m pip wheel --no-deps . -w dist
+          python tools/check_wheel.py dist/objectdna-0.1.0-py3-none-any.whl
+      - name: Install browser
+        if: runner.os == 'Linux'
+        run: npx playwright install --with-deps chromium
+        working-directory: web
+      - name: Browser workflow
+        if: runner.os == 'Linux'
+        env:
+          OBJECTDNA_BROWSER: chromium
+          OBJECTDNA_CAPTURE_DIR: ${{ runner.temp }}/objectdna-browser
+        run: |
+          python -m objectdna.cli serve > server.log 2>&1 &
+          objectdna_server_pid=$!
+          trap 'kill "$objectdna_server_pid" 2>/dev/null || true' EXIT
+          python -c "import time,urllib.request; exec('for attempt in range(60):\n try:\n  urllib.request.urlopen(\"http://127.0.0.1:8768/api/health\",timeout=2); break\n except OSError:\n  time.sleep(1)\nelse: raise SystemExit(\"Server did not start\")')"
+          npm --prefix web run test:ui
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: failure()
+        with:
+          name: diagnostics-${{ runner.os }}
+          path: |
+            server.log
+            ${{ runner.temp }}/objectdna-browser
+          retention-days: 7

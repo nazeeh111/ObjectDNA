@@ -1,0 +1,25 @@
+{
+  "source_kind": "original procedural fixture",
+  "units": "mm",
+  "spec": {
+    "family": "block",
+    "parameters": {
+      "width": 72.0,
+      "depth": 48.0,
+      "height": 24.0,
+      "thickness": 4.0
+    },
+    "holes": [
+      {
+        "x": 21.0,
+        "y": 24.0,
+        "radius": 5.0
+      },
+      {
+        "x": 51.0,
+        "y": 24.0,
+        "radius": 5.0
+      }
+    ]
+  }
+}

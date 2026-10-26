@@ -1,0 +1,22 @@
+{
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 1000,
+        "avg_frame_rate": "4/1",
+        "nb_frames": "149"
+      }
+    ],
+    "format": {
+      "duration": "37.250000"
+    }
+  },
+  "video_sha256": "4b1f1f69a80280f168ef7367829d69612ca8428ca4db0e0c8ccd7c636d6d78f4",
+  "gif_sha256": "3afd72d578f3881da499f20f869fb4bed5860139dcf9913057cd64ac030eca6a",
+  "full_decode": "Passed, current selected MP4 and GIF",
+  "review": "Current desktop/mobile/physical/failure screenshots inspected; sampled silent UI footage, not timing evidence."
+}

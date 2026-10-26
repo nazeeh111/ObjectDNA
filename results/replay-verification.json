@@ -1,0 +1,23 @@
+{
+  "checks": [
+    {
+      "version": "v1",
+      "cases": 3,
+      "method_results": 15,
+      "metrics_match_tolerance": 1e-08,
+      "max_absolute_metric_difference": 0.0,
+      "exact_spec_match": true,
+      "cad_validity_editability_match": true
+    },
+    {
+      "version": "v2",
+      "cases": 3,
+      "method_results": 9,
+      "metrics_match_tolerance": 1e-08,
+      "max_absolute_metric_difference": 0.0,
+      "exact_spec_match": true,
+      "cad_validity_editability_match": true
+    }
+  ],
+  "scope": "Frozen-source first3-case replay using same installed dependency versions; does not establish cross-version or cross-platform bitwise reproducibility."
+}

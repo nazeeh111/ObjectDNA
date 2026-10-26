@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "cases": 48,
+  "repeats": 3,
+  "warmup": "Both modes once on training seed 2000, excluded",
+  "statistic": "Median of repeat times per object per method; then aggregate across paired objects",
+  "dense_mean_of_case_medians_seconds": 0.17711115628723442,
+  "compact_mean_of_case_medians_seconds": 0.10537814755177048,
+  "dense_median_of_case_medians_seconds": 0.17420966643840075,
+  "compact_median_of_case_medians_seconds": 0.10422979149734601,
+  "ratio_of_mean_case_medians": 1.6807199633132925,
+  "median_per_case_speedup": 1.6696411747039417,
+  "speedup_bootstrap_95_percentile_ci": [
+    1.6021935860005827,
+    1.7616164858467638
+  ],
+  "paired_mean_difference_seconds": -0.07173300873546395,
+  "difference_bootstrap_95_percentile_ci": [
+    -0.08048138564627151,
+    -0.06337804234796446
+  ],
+  "source_unchanged_during_run": true,
+  "source_versions": {
+    "objectdna/geometry.py": "5a9223fa635b7e83c32e5315a0115b122527b5e2f9fb0befaf9098e0115376bf",
+    "objectdna/inference.py": "97131c019a6135cb1e8c3022e34d501a9d88e2b6cc445f44e5f2e153be0fd1cc",
+    "objectdna/proposal.py": "7628723d0d89a1d0d93e0ae654f1aa78e2a7fe88fa4c704b38cfc52b5d4c06d1",
+    "models/proposal.json": "a24ae47b0f13b8eeef0365a2722d967ed0b9787b5c52908431e86ab8fa97bf40",
+    "models/ranker.json": "22b80c0ef9845584b79000faec714f7741ebd171501e51e9ea99c37447dd36ee",
+    "scripts/benchmark_timing.py": "f370a397d71d0e9ef3a8ecd09e265d134a2802aa00392ae4c00ef9c7b12b9b60"
+  },
+  "quality_report_sha256": "f3be290dabff1257167a0b6f12bf7c1d442d385376d916849f6e0f4c93f66b60",
+  "threadpools": [
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libomp",
+      "version": null
+    }
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "numpy": "2.5.4"
+  },
+  "total_seconds": 46.981149375089444,
+  "limits": [
+    "Timing-only repeat of fixed modes on already evaluated scans; no tuning, retraining or quality selection.",
+    "Observed runtime is production reconstruction wall time, excluding cold imports, CAD validation/export and benchmark-only ground-truth metrics.",
+    "One BLAS/OpenMP thread requested; method order and object order randomized on every repeat.",
+    "Run after heavyweight owned test/render tasks finished; unrelated system load remains uncontrolled.",
+    "Exploratory paired bootstrap over 48 synthetic objects is not a universal speed guarantee."
+  ]
+}

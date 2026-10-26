@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-26T00:21:10.935Z",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "checks": [
+    "All mesh vertices project within the viewport.",
+    "No horizontal page overflow.",
+    "Quick links use an opaque high-contrast background and axe finds zero tagged violations."
+  ],
+  "browser_bundle": {
+    "path": "/assets/index-DuCftu9e.js",
+    "sha256": "3ff079733bed3fcf16ae07678f73b95787e53ead41d6789db971b256110d0bf5"
+  },
+  "stylesheet": {
+    "path": "/assets/index-DUHunlej.css",
+    "sha256": "69e35abfe8f67751414f2cdb96f2221df1fc19e93d35c3523208a7e77cd4101c"
+  }
+}

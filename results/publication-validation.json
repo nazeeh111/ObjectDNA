@@ -1,0 +1,13 @@
+{
+  "python_tests": 88,
+  "browser_workflow_checks": 13,
+  "patched_replay_method_results": 9,
+  "patched_replay_max_metric_difference": 0.0,
+  "model_weights_unchanged": {
+    "ranker.json": "22b80c0ef9845584b79000faec714f7741ebd171501e51e9ea99c37447dd36ee",
+    "proposal.json": "a24ae47b0f13b8eeef0365a2722d967ed0b9787b5c52908431e86ab8fa97bf40"
+  },
+  "source_formatted_and_correctness_lint": "passed",
+  "public_repository": "https://github.com/nazeeh111/ObjectDNA",
+  "ci_status": "See live GitHub Actions workflow badge; hosted validation is separate from this local receipt."
+}

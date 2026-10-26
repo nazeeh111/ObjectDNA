@@ -1,0 +1,226 @@
+{
+  "objects": [
+    {
+      "object": "cereal_box",
+      "ranking": "geometric",
+      "family": "block",
+      "metrics": {
+        "observed_rmse_mm": 1.9837417176960155,
+        "chamfer_mm": 2.463450806924355,
+        "observed_support": 0.948,
+        "surface_coverage": 0.9966,
+        "accepted": true,
+        "volumetric_iou": null,
+        "dimensional_error_mm": null,
+        "validity": true,
+        "valid": true,
+        "volume_mm3": 3022681.0216528582,
+        "solid_count": 1,
+        "bounds_mm": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            200.1053982815199,
+            54.06630371038161,
+            279.38741197533386
+          ],
+          "size": [
+            200.1053982815199,
+            54.06630371038161,
+            279.38741197533386
+          ]
+        },
+        "scan_to_cad_sampled_chamfer_mm": 2.6780069935271174,
+        "ground_truth_volume_iou": null,
+        "independent_dimensional_error_mm": null
+      },
+      "runtime_seconds": 3.455703750019893,
+      "spec": {
+        "family": "block",
+        "parameters": {
+          "width": 200.1053982815199,
+          "depth": 54.06630371038161,
+          "height": 279.38741197533386,
+          "thickness": 5.552604972800001
+        },
+        "holes": []
+      },
+      "scan_sha256": "d1d12d6111f84494d87c9f50282f75c86f88a02466282458b20ea38700347aa1"
+    },
+    {
+      "object": "cereal_box",
+      "ranking": "learned",
+      "family": "block",
+      "metrics": {
+        "observed_rmse_mm": 1.9837417176960155,
+        "chamfer_mm": 2.463450806924355,
+        "observed_support": 0.948,
+        "surface_coverage": 0.9966,
+        "accepted": true,
+        "volumetric_iou": null,
+        "dimensional_error_mm": null,
+        "validity": true,
+        "valid": true,
+        "volume_mm3": 3022681.0216528582,
+        "solid_count": 1,
+        "bounds_mm": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            200.1053982815199,
+            54.06630371038161,
+            279.38741197533386
+          ],
+          "size": [
+            200.1053982815199,
+            54.06630371038161,
+            279.38741197533386
+          ]
+        },
+        "scan_to_cad_sampled_chamfer_mm": 2.6780069935271174,
+        "ground_truth_volume_iou": null,
+        "independent_dimensional_error_mm": null
+      },
+      "runtime_seconds": 3.3308496669633314,
+      "spec": {
+        "family": "block",
+        "parameters": {
+          "width": 200.1053982815199,
+          "depth": 54.06630371038161,
+          "height": 279.38741197533386,
+          "thickness": 5.552604972800001
+        },
+        "holes": []
+      },
+      "scan_sha256": "d1d12d6111f84494d87c9f50282f75c86f88a02466282458b20ea38700347aa1"
+    },
+    {
+      "object": "porcelain_tray",
+      "ranking": "geometric",
+      "family": "enclosure",
+      "metrics": {
+        "observed_rmse_mm": 2.9580312882310404,
+        "chamfer_mm": 4.85200786794032,
+        "observed_support": 0.8273333333333334,
+        "surface_coverage": 0.6778,
+        "accepted": false,
+        "volumetric_iou": null,
+        "dimensional_error_mm": null,
+        "validity": true,
+        "valid": true,
+        "volume_mm3": 835173.6545722318,
+        "solid_count": 1,
+        "bounds_mm": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            165.27965546418145,
+            311.22912540085855,
+            32.36187101184017
+          ],
+          "size": [
+            165.27965546418145,
+            311.22912540085855,
+            32.36187101184017
+          ]
+        },
+        "scan_to_cad_sampled_chamfer_mm": 5.077111843335217,
+        "ground_truth_volume_iou": null,
+        "independent_dimensional_error_mm": null
+      },
+      "runtime_seconds": 2.2354312499519438,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 165.27965546418145,
+          "depth": 311.22912540085855,
+          "height": 32.36187101184017,
+          "thickness": 11.944240181507928
+        },
+        "holes": []
+      },
+      "scan_sha256": "648d48fb16d010e088d78218f02298fc20abd37266bbc783ec5b2f6b1a701ddb"
+    },
+    {
+      "object": "porcelain_tray",
+      "ranking": "learned",
+      "family": "enclosure",
+      "metrics": {
+        "observed_rmse_mm": 2.9580312882310404,
+        "chamfer_mm": 4.85200786794032,
+        "observed_support": 0.8273333333333334,
+        "surface_coverage": 0.6778,
+        "accepted": false,
+        "volumetric_iou": null,
+        "dimensional_error_mm": null,
+        "validity": true,
+        "valid": true,
+        "volume_mm3": 835173.6545722318,
+        "solid_count": 1,
+        "bounds_mm": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            165.27965546418145,
+            311.22912540085855,
+            32.36187101184017
+          ],
+          "size": [
+            165.27965546418145,
+            311.22912540085855,
+            32.36187101184017
+          ]
+        },
+        "scan_to_cad_sampled_chamfer_mm": 5.077111843335217,
+        "ground_truth_volume_iou": null,
+        "independent_dimensional_error_mm": null
+      },
+      "runtime_seconds": 0.9700228750007227,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 165.27965546418145,
+          "depth": 311.22912540085855,
+          "height": 32.36187101184017,
+          "thickness": 11.944240181507928
+        },
+        "holes": []
+      },
+      "scan_sha256": "648d48fb16d010e088d78218f02298fc20abd37266bbc783ec5b2f6b1a701ddb"
+    }
+  ],
+  "method": "physical processed mesh scans sampled to points; external envelope approximation, no real CAD or caliper truth",
+  "model_sha256": {
+    "ranker.json": "22b80c0ef9845584b79000faec714f7741ebd171501e51e9ea99c37447dd36ee",
+    "proposal.json": "a24ae47b0f13b8eeef0365a2722d967ed0b9787b5c52908431e86ab8fa97bf40"
+  },
+  "source_sha256": {
+    "io.py": "3b826f0af9457b73124ef2c80d3eecbe3db5a3d8a23f289bfb13f7a1902dffa0",
+    "__init__.py": "270d030b575455ca985ad816a53ba2397590f9976bf5f1c23bf3b7b712ef4209",
+    "proposal.py": "7628723d0d89a1d0d93e0ae654f1aa78e2a7fe88fa4c704b38cfc52b5d4c06d1",
+    "api.py": "64528fa4991e12d3be8926c7123ab8a71d471e68ca4f374c017cad20a35e117a",
+    "cli.py": "187be58bd1c28a406132af8e992248d773ae5dbda8dd85a0f427c4d10b938c5e",
+    "geometry.py": "5a9223fa635b7e83c32e5315a0115b122527b5e2f9fb0befaf9098e0115376bf",
+    "inference.py": "df5d6780bc17ad98a9656de8d2e456d1e812451858b1fa72790e00362eb7ccbf",
+    "cad.py": "331473beb26499e427028f2a2b6cb81a5f6e6f8f64db00fbb78870965d34540b",
+    "samples.py": "d449a484a0a13bdc7dc52b8f35621f446c0902016df86a47f7cbe32e425fa5dc"
+  },
+  "limits": [
+    "Two small qualitative real cases, no generalization claim.",
+    "Volume IoU and independent measured dimensional error unavailable, stored as null.",
+    "Support acceptance is a heuristic, not an accuracy certificate.",
+    "Mesh preprocessing by dataset publisher may remove real capture defects."
+  ]
+}

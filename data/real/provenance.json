@@ -1,0 +1,38 @@
+{
+  "cereal_box": {
+    "name": "Vans_Cereal_Honey_Nut_Crunch_11_oz_box",
+    "archive_sha256": "31a5acdad9f8f05b186a8430d09982e5f156a02846eb9fa2b7f69ffb78d0ad1d",
+    "intended_use": "Closed-cuboid envelope fit. Cardboard, folded edges, and bowing are outside the ideal block grammar.",
+    "owner": "GoogleResearch",
+    "copyright": "Copyright 2020 Google LLC.",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://app.gazebosim.org/GoogleResearch/fuel/models/Vans_Cereal_Honey_Nut_Crunch_11_oz_box",
+    "archive_url": "https://fuel.gazebosim.org/1.0/GoogleResearch/models/Vans_Cereal_Honey_Nut_Crunch_11_oz_box/1/Vans_Cereal_Honey_Nut_Crunch_11_oz_box.zip",
+    "version": 1,
+    "mesh_sha256": "8e877cb87f4914f967f51b1cad73e9b83a4bfc4ee8f9cdbb31330d8f7370e3af",
+    "xyz_sha256": "d1d12d6111f84494d87c9f50282f75c86f88a02466282458b20ea38700347aa1",
+    "processing": "Area-weighted surface sampling of published processed OBJ scan mesh; 12000 samples; NumPy default_rng seed 20261025; coordinates multiplied by 1000 from SDF SI metres to mm. No denoising, alignment, or fitting applied.",
+    "physical_capture_evidence": "https://research.google/blog/scanned-objects-by-google-research-a-dataset-of-3d-scanned-common-household-items/",
+    "independent_measured_dimensions_mm": null,
+    "limits": "Published mesh is a simplified processed physical scan, not raw sensor input. Reconstructed distances are scan-relative; manufacturing accuracy and hidden structure are unverified. Packaging shell thickness and material are unknown."
+  },
+  "porcelain_tray": {
+    "name": "Threshold_Tray_Rectangle_Porcelain",
+    "archive_sha256": "02d4670faedb0befcf875f0f57df185210d442f7025baaa6f1ab864bd6fcec57",
+    "intended_use": "Failure/stress example: flared walls, rounded corners, and feet are outside the uniform-wall enclosure grammar.",
+    "owner": "GoogleResearch",
+    "copyright": "Copyright 2020 Google LLC.",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://app.gazebosim.org/GoogleResearch/fuel/models/Threshold_Tray_Rectangle_Porcelain",
+    "archive_url": "https://fuel.gazebosim.org/1.0/GoogleResearch/models/Threshold_Tray_Rectangle_Porcelain/1/Threshold_Tray_Rectangle_Porcelain.zip",
+    "version": 1,
+    "mesh_sha256": "a37913eabcfdae48d8f7f4be857ecffd914f9fe97a0c76cc2853f8fb0a8d8829",
+    "xyz_sha256": "648d48fb16d010e088d78218f02298fc20abd37266bbc783ec5b2f6b1a701ddb",
+    "processing": "Area-weighted surface sampling of published processed OBJ scan mesh; 12000 samples; NumPy default_rng seed 20261025; coordinates multiplied by 1000 from SDF SI metres to mm. No denoising, alignment, or fitting applied.",
+    "physical_capture_evidence": "https://research.google/blog/scanned-objects-by-google-research-a-dataset-of-3d-scanned-common-household-items/",
+    "independent_measured_dimensions_mm": null,
+    "limits": "Published mesh is a simplified processed physical scan, not raw sensor input. Reconstructed distances are scan-relative; manufacturing accuracy and hidden structure are unverified. Packaging shell thickness and material are unknown."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "objectdna/geometry.py": "5a9223fa635b7e83c32e5315a0115b122527b5e2f9fb0befaf9098e0115376bf",
+  "objectdna/inference.py": "df5d6780bc17ad98a9656de8d2e456d1e812451858b1fa72790e00362eb7ccbf",
+  "objectdna/proposal.py": "7628723d0d89a1d0d93e0ae654f1aa78e2a7fe88fa4c704b38cfc52b5d4c06d1",
+  "objectdna/cad.py": "4f1231e4ade52f587f203cdeefe81d3669a59a4c1064b37b0905e0f2b505270e",
+  "scripts/train.py": "a62a437071b5280f9a992cd1d77f768ebe450bfabe41b78ac355d3efa2671810",
+  "scripts/train_proposal.py": "8f5b29219240f79ad849ee0c3a2bf3966cd5586606255a0e7a4f423115011925",
+  "scripts/benchmark.py": "7bbaf27bb9200853eb219bd757473724fc2944f4947b31d8f5d00691e5fb492d",
+  "models/ranker.json": "22b80c0ef9845584b79000faec714f7741ebd171501e51e9ea99c37447dd36ee",
+  "models/proposal.json": "a24ae47b0f13b8eeef0365a2722d967ed0b9787b5c52908431e86ab8fa97bf40"
+}

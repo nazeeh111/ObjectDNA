@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-26T00:16:27.324Z",
+  "baseURL": "http://127.0.0.1:8768",
+  "checks": [
+    "Live bracket reconstruction; kernel-valid solid and nonempty WebGL render.",
+    "Overlay, source-only and CAD-only modes, pressed semantics, top/iso and keyboard camera controls.",
+    "Dimension edit rebuilt requested width, preserved exact untouched parameters, retained valid solid and marked user-edited hypothesis.",
+    "Reset restored the reconstructed parameters.",
+    "Compact learned proposal mode reaches the backend and reconstructs a valid result.",
+    "Physical cereal-box scan reconstructed end to end; capture provenance visible.",
+    "Actual STEP download from the physical-object reconstruction.",
+    "Out-of-grammar physical tray exposes warnings and hypothesis status.",
+    "Unknown-scale import exposes JSON-only exports; metric API export blocked; dialog Escape restores keyboard focus.",
+    "An uploaded relative scan calibrates in place through a reference measurement and metric exports become available.",
+    "Malformed upload rejected while preserving the previous valid solid.",
+    "The bore feature tree focuses the correct named hole parameter.",
+    "390px mobile viewport renders without horizontal overflow; resize fits the model to the new viewport."
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)"
+  ],
+  "frames": 149,
+  "screenshots": "docs/assets",
+  "raw_capture_id": "capture-2026-10-26T00-12-21-163Z",
+  "video_note": "Actual UI frames sampled during the browser run. Playback pacing is capture-dependent, not a runtime benchmark.",
+  "browser_bundle": {
+    "path": "/assets/index-C2h5s3pO.js",
+    "sha256": "3c2845539da1dad3a49da156b0a9d1a77b8f1a9ba9ce7cd16d7d8c96fc483dd8"
+  },
+  "initialMetrics": {
+    "observed_rmse_mm": 0.19820476336645507,
+    "chamfer_mm": 0.7160831223841433,
+    "observed_support": 0.9987458193979933,
+    "surface_coverage": 0.9554,
+    "accepted": true,
+    "volumetric_iou": null,
+    "dimensional_error_mm": null,
+    "validity": true,
+    "valid": true,
+    "volume_mm3": 36986.365429566176,
+    "solid_count": 1,
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        0
+      ],
+      "max": [
+        80.07472084740138,
+        50.181966247804326,
+        44.14765182982143
+      ],
+      "size": [
+        80.07472084740138,
+        50.181966247804326,
+        44.14765182982143
+      ]
+    }
+  },
+  "mobile_stylesheet": {
+    "path": "/assets/index-DUHunlej.css",
+    "sha256": "69e35abfe8f67751414f2cdb96f2221df1fc19e93d35c3523208a7e77cd4101c"
+  },
+  "validation_note": "The thirteen functional checks passed before a mobile-only CSS contrast correction and a pixel-identical supplemental-axis role attribute fix. The current stylesheet received targeted mobile checks; the final semantic fix received axe workbench/export checks. No functional JavaScript behavior changed.",
+  "functional_browser_bundle": {
+    "path": "/assets/index-DuCftu9e.js",
+    "sha256": "3ff079733bed3fcf16ae07678f73b95787e53ead41d6789db971b256110d0bf5"
+  }
+}

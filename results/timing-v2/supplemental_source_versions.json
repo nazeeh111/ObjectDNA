@@ -1,0 +1,7 @@
+{
+  "objectdna/__init__.py": "270d030b575455ca985ad816a53ba2397590f9976bf5f1c23bf3b7b712ef4209",
+  "scripts/train.py": "a62a437071b5280f9a992cd1d77f768ebe450bfabe41b78ac355d3efa2671810",
+  "models/training_manifest.json": "5c28df84390cd685d9733cc847dfd301e32348a413163a4f7b99067314d86f9e",
+  "models/proposal_manifest.json": "d3691d943e336715cfaa1694159f2919747577c2f8e704a5c1d39bf47405d478",
+  "results/compact-test-v2/summary.json": "f3be290dabff1257167a0b6f12bf7c1d442d385376d916849f6e0f4c93f66b60"
+}

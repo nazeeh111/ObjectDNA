@@ -1,0 +1,29 @@
+name: Reconstruction or application bug
+description: Report a reproducible geometry, import, export, or workbench problem.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the result and what you expected. For reconstruction errors, identify the unsupported or incorrect geometry.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: Include the command or workbench steps, selected units, calibration, candidate mode, and ranking mode. Share only inputs you can legally redistribute.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Version and environment
+      description: Include the ObjectDNA version or commit, operating system, Python version, and browser if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and reference measurements
+      description: Attach a small input, screenshot, error message, or evidence JSON if available. Distinguish measured dimensions from estimates and leave unknown dimensions unknown. Remove private data before sharing.

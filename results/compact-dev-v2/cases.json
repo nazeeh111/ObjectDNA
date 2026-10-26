@@ -1,0 +1,1505 @@
+[
+  {
+    "seed": 4000,
+    "method": "dense_geometric",
+    "truth_family": "bracket",
+    "partial": true,
+    "noise_fraction_diagonal": 0.0011318496508036886,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 66.57050774362729,
+        "depth": 79.66455266725995,
+        "height": 27.109062911935162,
+        "thickness": 5.135500409817883
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 4.524050832958892,
+    "candidate_mode": "dense",
+    "accepted": false,
+    "observed_support": 0.9974853310980721,
+    "surface_coverage": 0.6494,
+    "chamfer_mm": 0.7518998735204332,
+    "sampling_floor_mm": 0.730735707782804,
+    "volumetric_iou": 0.953936622018948,
+    "external_dim_mae_mm": 0.215184851197859,
+    "external_dimension_errors_mm": {
+      "width": 0.2015974295899241,
+      "depth": 0.28237791869374007,
+      "height": 0.16157920530991277
+    },
+    "thickness_error_mm": 0.17734006682365688,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 2.576299292035401,
+    "volume_mm3": 34747.314113934815
+  },
+  {
+    "seed": 4000,
+    "method": "compact_ranker",
+    "truth_family": "bracket",
+    "partial": true,
+    "noise_fraction_diagonal": 0.0011318496508036886,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 66.57050774362718,
+        "depth": 79.66455266365327,
+        "height": 27.10906291193489,
+        "thickness": 5.135500410012794
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 1.2042132089845836,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.9974853310980721,
+    "surface_coverage": 0.6494,
+    "chamfer_mm": 0.7518998735142208,
+    "sampling_floor_mm": 0.730735707782804,
+    "volumetric_iou": 0.953936622018948,
+    "external_dim_mae_mm": 0.21518484999550105,
+    "external_dimension_errors_mm": {
+      "width": 0.20159742958981042,
+      "depth": 0.28237791508705357,
+      "height": 0.1615792053096392
+    },
+    "thickness_error_mm": 0.17734006701856764,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 2.765370290959254,
+    "volume_mm3": 34747.314113953784
+  },
+  {
+    "seed": 4000,
+    "method": "compact_geometric",
+    "truth_family": "bracket",
+    "partial": true,
+    "noise_fraction_diagonal": 0.0011318496508036886,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 66.57050774362718,
+        "depth": 79.66455266365327,
+        "height": 27.10906291193489,
+        "thickness": 5.135500410012794
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 2.8681542499689385,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.9974853310980721,
+    "surface_coverage": 0.6494,
+    "chamfer_mm": 0.7518998735142208,
+    "sampling_floor_mm": 0.730735707782804,
+    "volumetric_iou": 0.953936622018948,
+    "external_dim_mae_mm": 0.21518484999550105,
+    "external_dimension_errors_mm": {
+      "width": 0.20159742958981042,
+      "depth": 0.28237791508705357,
+      "height": 0.1615792053096392
+    },
+    "thickness_error_mm": 0.17734006701856764,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 4.9024576670490205,
+    "volume_mm3": 34747.314113953784
+  },
+  {
+    "seed": 4001,
+    "method": "compact_geometric",
+    "truth_family": "enclosure",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0005066295945418568,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 35.42374785869625,
+        "depth": 58.25721246368077,
+        "height": 32.01960808858723,
+        "thickness": 2.3326743694780374
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 3.844676582957618,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.9974937343358395,
+    "surface_coverage": 0.6052,
+    "chamfer_mm": 0.7191974466972229,
+    "sampling_floor_mm": 0.7241389920186874,
+    "volumetric_iou": 0.9661725579627518,
+    "external_dim_mae_mm": 0.0905111910730388,
+    "external_dimension_errors_mm": {
+      "width": 0.10800762063188785,
+      "depth": 0.08236060668023981,
+      "height": 0.08116534590698876
+    },
+    "thickness_error_mm": 0.05144647839079308,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 8.54100558301434,
+    "volume_mm3": 17142.567177644436
+  },
+  {
+    "seed": 4001,
+    "method": "dense_geometric",
+    "truth_family": "enclosure",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0005066295945418568,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 35.42374786171589,
+        "depth": 58.257212415783414,
+        "height": 32.01960611619008,
+        "thickness": 2.3326743495277817
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 8.030223083915189,
+    "candidate_mode": "dense",
+    "accepted": false,
+    "observed_support": 0.9974937343358395,
+    "surface_coverage": 0.6052,
+    "chamfer_mm": 0.7191974273139989,
+    "sampling_floor_mm": 0.7241389920186874,
+    "volumetric_iou": 0.9661725579627518,
+    "external_dim_mae_mm": 0.09051051864808102,
+    "external_dimension_errors_mm": {
+      "width": 0.10800762365152394,
+      "depth": 0.08236055878288084,
+      "height": 0.08116337350983827
+    },
+    "thickness_error_mm": 0.05144645844053741,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 3.342427415889688,
+    "volume_mm3": 17142.56621596587
+  },
+  {
+    "seed": 4001,
+    "method": "compact_ranker",
+    "truth_family": "enclosure",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0005066295945418568,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 35.42374785869625,
+        "depth": 58.25721246368077,
+        "height": 32.01960808858723,
+        "thickness": 2.3326743694780374
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 1.4668539579724893,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.9974937343358395,
+    "surface_coverage": 0.6052,
+    "chamfer_mm": 0.7191974466972229,
+    "sampling_floor_mm": 0.7241389920186874,
+    "volumetric_iou": 0.9661725579627518,
+    "external_dim_mae_mm": 0.0905111910730388,
+    "external_dimension_errors_mm": {
+      "width": 0.10800762063188785,
+      "depth": 0.08236060668023981,
+      "height": 0.08116534590698876
+    },
+    "thickness_error_mm": 0.05144647839079308,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 5.401895165909082,
+    "volume_mm3": 17142.567177644436
+  },
+  {
+    "seed": 4002,
+    "method": "compact_geometric",
+    "truth_family": "block",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0029213879420461565,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 77.82733639956737,
+        "depth": 71.91531786845242,
+        "height": 21.954776195425172,
+        "thickness": 2.268625098115433
+      },
+      "holes": [
+        {
+          "x": 23.74946216879808,
+          "y": 36.23751330094236,
+          "radius": 6.822476456696593
+        },
+        {
+          "x": 54.55863340968054,
+          "y": 36.175217504872585,
+          "radius": 6.658091281799395
+        }
+      ]
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 3.0911605830769986,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9825,
+    "surface_coverage": 0.7594,
+    "chamfer_mm": 0.9227928876997139,
+    "sampling_floor_mm": 0.8096095036328255,
+    "volumetric_iou": 0.9529760777630499,
+    "external_dim_mae_mm": 0.5512796043624751,
+    "external_dimension_errors_mm": {
+      "width": 0.5059188795638647,
+      "depth": 0.4773828278592731,
+      "height": 0.6705371056642875
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 1.1678367090644315,
+    "volume_mm3": 116612.37918715554
+  },
+  {
+    "seed": 4002,
+    "method": "dense_geometric",
+    "truth_family": "block",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0029213879420461565,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 77.82733639956737,
+        "depth": 71.91531786845242,
+        "height": 21.954776195425172,
+        "thickness": 2.268625098115433
+      },
+      "holes": [
+        {
+          "x": 23.74946216879808,
+          "y": 36.23751330094236,
+          "radius": 6.822476456696593
+        },
+        {
+          "x": 54.55863340968054,
+          "y": 36.175217504872585,
+          "radius": 6.658091281799395
+        }
+      ]
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.41481004108209163,
+    "candidate_mode": "dense",
+    "accepted": true,
+    "observed_support": 0.9825,
+    "surface_coverage": 0.7594,
+    "chamfer_mm": 0.9227928876997139,
+    "sampling_floor_mm": 0.8096095036328255,
+    "volumetric_iou": 0.9529760777630499,
+    "external_dim_mae_mm": 0.5512796043624751,
+    "external_dimension_errors_mm": {
+      "width": 0.5059188795638647,
+      "depth": 0.4773828278592731,
+      "height": 0.6705371056642875
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 1.302198625053279,
+    "volume_mm3": 116612.37918715554
+  },
+  {
+    "seed": 4002,
+    "method": "compact_ranker",
+    "truth_family": "block",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0029213879420461565,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 77.82733639956737,
+        "depth": 71.91531786845242,
+        "height": 21.954776195425172,
+        "thickness": 2.268625098115433
+      },
+      "holes": [
+        {
+          "x": 23.74946216879808,
+          "y": 36.23751330094236,
+          "radius": 6.822476456696593
+        },
+        {
+          "x": 54.55863340968054,
+          "y": 36.175217504872585,
+          "radius": 6.658091281799395
+        }
+      ]
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.23634141695220023,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9825,
+    "surface_coverage": 0.7594,
+    "chamfer_mm": 0.9227928876997139,
+    "sampling_floor_mm": 0.8096095036328255,
+    "volumetric_iou": 0.9529760777630499,
+    "external_dim_mae_mm": 0.5512796043624751,
+    "external_dimension_errors_mm": {
+      "width": 0.5059188795638647,
+      "depth": 0.4773828278592731,
+      "height": 0.6705371056642875
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 1.0165498340502381,
+    "volume_mm3": 116612.37918715554
+  },
+  {
+    "seed": 4003,
+    "method": "dense_geometric",
+    "truth_family": "bracket",
+    "partial": false,
+    "noise_fraction_diagonal": 0.002163968476045609,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 38.373044232854916,
+        "depth": 36.51562328523696,
+        "height": 23.26326553341849,
+        "thickness": 3.8840714184298
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 0.7007088749669492,
+    "candidate_mode": "dense",
+    "accepted": true,
+    "observed_support": 0.993322203672788,
+    "surface_coverage": 0.7788,
+    "chamfer_mm": 0.46144744228753687,
+    "sampling_floor_mm": 0.4155898215589242,
+    "volumetric_iou": 0.9222642699463891,
+    "external_dim_mae_mm": 0.21589449967648142,
+    "external_dimension_errors_mm": {
+      "width": 0.1666075777432212,
+      "depth": 0.21519806011207265,
+      "height": 0.26587786117415035
+    },
+    "thickness_error_mm": 0.2573693335157716,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.7325308329891413,
+    "volume_mm3": 8330.767285214723
+  },
+  {
+    "seed": 4003,
+    "method": "compact_ranker",
+    "truth_family": "bracket",
+    "partial": false,
+    "noise_fraction_diagonal": 0.002163968476045609,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 38.373044232854916,
+        "depth": 36.51562328523696,
+        "height": 23.263265145744516,
+        "thickness": 3.8840714286266858
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 0.4895881249103695,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.993322203672788,
+    "surface_coverage": 0.7788,
+    "chamfer_mm": 0.4614474425054361,
+    "sampling_floor_mm": 0.4155898215589242,
+    "volumetric_iou": 0.9222642699463891,
+    "external_dim_mae_mm": 0.21589437045182316,
+    "external_dimension_errors_mm": {
+      "width": 0.1666075777432212,
+      "depth": 0.21519806011207265,
+      "height": 0.26587747350017565
+    },
+    "thickness_error_mm": 0.2573693437126572,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.6520321669522673,
+    "volume_mm3": 8330.767247785432
+  },
+  {
+    "seed": 4003,
+    "method": "compact_geometric",
+    "truth_family": "bracket",
+    "partial": false,
+    "noise_fraction_diagonal": 0.002163968476045609,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 38.373044232854916,
+        "depth": 36.51562328523696,
+        "height": 23.263265145744516,
+        "thickness": 3.8840714286266858
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 0.2970952079631388,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.993322203672788,
+    "surface_coverage": 0.7788,
+    "chamfer_mm": 0.4614474425054361,
+    "sampling_floor_mm": 0.4155898215589242,
+    "volumetric_iou": 0.9222642699463891,
+    "external_dim_mae_mm": 0.21589437045182316,
+    "external_dimension_errors_mm": {
+      "width": 0.1666075777432212,
+      "depth": 0.21519806011207265,
+      "height": 0.26587747350017565
+    },
+    "thickness_error_mm": 0.2573693437126572,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.45612941693980247,
+    "volume_mm3": 8330.767247785432
+  },
+  {
+    "seed": 4004,
+    "method": "compact_ranker",
+    "truth_family": "enclosure",
+    "partial": true,
+    "noise_fraction_diagonal": 0.0008725308252674152,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 94.51038251026931,
+        "depth": 67.46944473286294,
+        "height": 47.71983857037875,
+        "thickness": 3.4733229314927465
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 0.3607620829716325,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.995819397993311,
+    "surface_coverage": 0.5298,
+    "chamfer_mm": 1.2068141066275602,
+    "sampling_floor_mm": 1.2102857811923864,
+    "volumetric_iou": 0.9466655178356023,
+    "external_dim_mae_mm": 0.20727574732613144,
+    "external_dimension_errors_mm": {
+      "width": 0.24362810708865368,
+      "depth": 0.2738357728937615,
+      "height": 0.10436336199597918
+    },
+    "thickness_error_mm": 0.13119559032370676,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.22591462498530746,
+    "volume_mm3": 69799.61698131202
+  },
+  {
+    "seed": 4004,
+    "method": "compact_geometric",
+    "truth_family": "enclosure",
+    "partial": true,
+    "noise_fraction_diagonal": 0.0008725308252674152,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 94.51038251026931,
+        "depth": 67.46944473286294,
+        "height": 47.71983857037875,
+        "thickness": 3.4733229314927465
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 0.1455175840528682,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.995819397993311,
+    "surface_coverage": 0.5298,
+    "chamfer_mm": 1.2068141066275602,
+    "sampling_floor_mm": 1.2102857811923864,
+    "volumetric_iou": 0.9466655178356023,
+    "external_dim_mae_mm": 0.20727574732613144,
+    "external_dimension_errors_mm": {
+      "width": 0.24362810708865368,
+      "depth": 0.2738357728937615,
+      "height": 0.10436336199597918
+    },
+    "thickness_error_mm": 0.13119559032370676,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.2231412089895457,
+    "volume_mm3": 69799.61698131202
+  },
+  {
+    "seed": 4004,
+    "method": "dense_geometric",
+    "truth_family": "enclosure",
+    "partial": true,
+    "noise_fraction_diagonal": 0.0008725308252674152,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 94.51038251263425,
+        "depth": 67.46944474466548,
+        "height": 47.71983852283095,
+        "thickness": 3.4733229367131893
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 0.3538960840087384,
+    "candidate_mode": "dense",
+    "accepted": false,
+    "observed_support": 0.995819397993311,
+    "surface_coverage": 0.5298,
+    "chamfer_mm": 1.206814106393186,
+    "sampling_floor_mm": 1.2102857811923864,
+    "volumetric_iou": 0.9466655178356023,
+    "external_dim_mae_mm": 0.20727573619935905,
+    "external_dimension_errors_mm": {
+      "width": 0.2436281094535957,
+      "depth": 0.27383578469630265,
+      "height": 0.10436331444817881
+    },
+    "thickness_error_mm": 0.1311955955441495,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.27024837501812726,
+    "volume_mm3": 69799.61703496624
+  },
+  {
+    "seed": 4005,
+    "method": "dense_geometric",
+    "truth_family": "block",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0014907883148190177,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 104.55792581194962,
+        "depth": 42.871081468712,
+        "height": 47.74204682325674,
+        "thickness": 4.323750865314749
+      },
+      "holes": []
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.2846655419562012,
+    "candidate_mode": "dense",
+    "accepted": true,
+    "observed_support": 0.9966555183946488,
+    "surface_coverage": 0.7886,
+    "chamfer_mm": 0.9605971140697729,
+    "sampling_floor_mm": 0.9109407507966452,
+    "volumetric_iou": 0.97922,
+    "external_dim_mae_mm": 0.3838078027049671,
+    "external_dimension_errors_mm": {
+      "width": 0.3441882478299618,
+      "depth": 0.40964939114002163,
+      "height": 0.39758576914491783
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.27677658398170024,
+    "volume_mm3": 214004.26702882824
+  },
+  {
+    "seed": 4005,
+    "method": "compact_geometric",
+    "truth_family": "block",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0014907883148190177,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 104.55792581194962,
+        "depth": 42.871081468712,
+        "height": 47.74204682325674,
+        "thickness": 4.323750865314749
+      },
+      "holes": []
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.17875958397053182,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9966555183946488,
+    "surface_coverage": 0.7886,
+    "chamfer_mm": 0.9605971140697729,
+    "sampling_floor_mm": 0.9109407507966452,
+    "volumetric_iou": 0.97922,
+    "external_dim_mae_mm": 0.3838078027049671,
+    "external_dimension_errors_mm": {
+      "width": 0.3441882478299618,
+      "depth": 0.40964939114002163,
+      "height": 0.39758576914491783
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.2113538330886513,
+    "volume_mm3": 214004.26702882824
+  },
+  {
+    "seed": 4005,
+    "method": "compact_ranker",
+    "truth_family": "block",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0014907883148190177,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 104.55792581194962,
+        "depth": 42.871081468712,
+        "height": 47.74204682325674,
+        "thickness": 4.323750865314749
+      },
+      "holes": []
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.19080758304335177,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9966555183946488,
+    "surface_coverage": 0.7886,
+    "chamfer_mm": 0.9605971140697729,
+    "sampling_floor_mm": 0.9109407507966452,
+    "volumetric_iou": 0.97922,
+    "external_dim_mae_mm": 0.3838078027049671,
+    "external_dimension_errors_mm": {
+      "width": 0.3441882478299618,
+      "depth": 0.40964939114002163,
+      "height": 0.39758576914491783
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.2428954589413479,
+    "volume_mm3": 214004.26702882824
+  },
+  {
+    "seed": 4006,
+    "method": "dense_geometric",
+    "truth_family": "bracket",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0033235429955630245,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 66.69459705515226,
+        "depth": 66.03600182105943,
+        "height": 37.42874847367632,
+        "thickness": 4.31514483080532
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 0.2655151250073686,
+    "candidate_mode": "dense",
+    "accepted": true,
+    "observed_support": 0.9597652975691534,
+    "surface_coverage": 0.7864,
+    "chamfer_mm": 0.8967212433233858,
+    "sampling_floor_mm": 0.7141524207539526,
+    "volumetric_iou": 0.8040764914691401,
+    "external_dim_mae_mm": 0.5465347869699855,
+    "external_dimension_errors_mm": {
+      "width": 0.34940932834409466,
+      "depth": 0.5909551727089308,
+      "height": 0.6992398598569309
+    },
+    "thickness_error_mm": 0.75568034349067,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.33371975005138665,
+    "volume_mm3": 28534.94370741565
+  },
+  {
+    "seed": 4006,
+    "method": "compact_geometric",
+    "truth_family": "bracket",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0033235429955630245,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 66.69459708228331,
+        "depth": 66.03600152135715,
+        "height": 37.42874845164655,
+        "thickness": 4.315144833693463
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 0.16911583300679922,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9597652975691534,
+    "surface_coverage": 0.7864,
+    "chamfer_mm": 0.8967212438597254,
+    "sampling_floor_mm": 0.7141524207539526,
+    "volumetric_iou": 0.8040764914691401,
+    "external_dim_mae_mm": 0.5465346887696517,
+    "external_dimension_errors_mm": {
+      "width": 0.34940935547514584,
+      "depth": 0.5909548730066518,
+      "height": 0.6992398378271574
+    },
+    "thickness_error_mm": 0.7556803463788131,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.3220484999474138,
+    "volume_mm3": 28534.943644697403
+  },
+  {
+    "seed": 4006,
+    "method": "compact_ranker",
+    "truth_family": "bracket",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0033235429955630245,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 67.15169884886929,
+        "depth": 66.24952006665119,
+        "height": 37.73568108823322,
+        "thickness": 3.821008395816432
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 0.1452817500103265,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9580888516345348,
+    "surface_coverage": 0.786,
+    "chamfer_mm": 0.973588500400985,
+    "sampling_floor_mm": 0.7141524207539526,
+    "volumetric_iou": 0.7015718908922792,
+    "external_dim_mae_mm": 0.8723856715918809,
+    "external_dimension_errors_mm": {
+      "width": 0.8065111220611243,
+      "depth": 0.8044734183006881,
+      "height": 1.0061724744138303
+    },
+    "thickness_error_mm": 0.26154390850178233,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.369456332991831,
+    "volume_mm3": 25700.850270632684
+  },
+  {
+    "seed": 4007,
+    "method": "compact_geometric",
+    "truth_family": "enclosure",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0010705231501934344,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 65.33930196859522,
+        "depth": 74.28487369884262,
+        "height": 61.19311438562704,
+        "thickness": 3.487761391323253
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 0.18106762506067753,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.995819397993311,
+    "surface_coverage": 0.5572,
+    "chamfer_mm": 1.214016275522328,
+    "sampling_floor_mm": 1.1904730806862016,
+    "volumetric_iou": 0.935605111500877,
+    "external_dim_mae_mm": 0.2664328587501454,
+    "external_dimension_errors_mm": {
+      "width": 0.29479755169373334,
+      "depth": 0.28458967490431064,
+      "height": 0.21991134965239212
+    },
+    "thickness_error_mm": 0.16351480409255403,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.19916279206518084,
+    "volume_mm3": 70323.02307677513
+  },
+  {
+    "seed": 4007,
+    "method": "compact_ranker",
+    "truth_family": "enclosure",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0010705231501934344,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 65.33930196859522,
+        "depth": 74.28487369884262,
+        "height": 61.19311438562704,
+        "thickness": 3.487761391323253
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 0.16734820790588856,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.995819397993311,
+    "surface_coverage": 0.5572,
+    "chamfer_mm": 1.214016275522328,
+    "sampling_floor_mm": 1.1904730806862016,
+    "volumetric_iou": 0.935605111500877,
+    "external_dim_mae_mm": 0.2664328587501454,
+    "external_dimension_errors_mm": {
+      "width": 0.29479755169373334,
+      "depth": 0.28458967490431064,
+      "height": 0.21991134965239212
+    },
+    "thickness_error_mm": 0.16351480409255403,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.24110779201146215,
+    "volume_mm3": 70323.02307677513
+  },
+  {
+    "seed": 4007,
+    "method": "dense_geometric",
+    "truth_family": "enclosure",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0010705231501934344,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 65.3393018379444,
+        "depth": 74.28487365852972,
+        "height": 61.1931143856874,
+        "thickness": 3.4877614940445945
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 0.23027050006203353,
+    "candidate_mode": "dense",
+    "accepted": false,
+    "observed_support": 0.995819397993311,
+    "surface_coverage": 0.5572,
+    "chamfer_mm": 1.2140162747356305,
+    "sampling_floor_mm": 1.1904730806862016,
+    "volumetric_iou": 0.935605111500877,
+    "external_dim_mae_mm": 0.26643280178236023,
+    "external_dimension_errors_mm": {
+      "width": 0.2947974210429152,
+      "depth": 0.28458963459141273,
+      "height": 0.21991134971275272
+    },
+    "thickness_error_mm": 0.1635149068138957,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.2481797500513494,
+    "volume_mm3": 70323.02485838321
+  },
+  {
+    "seed": 4008,
+    "method": "dense_geometric",
+    "truth_family": "block",
+    "partial": true,
+    "noise_fraction_diagonal": 0.0031920070249328745,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 56.710539122174644,
+        "depth": 62.71659563414339,
+        "height": 48.12479799791247,
+        "thickness": 4.868466436365651
+      },
+      "holes": [
+        {
+          "x": 39.936342277424146,
+          "y": 31.57561236600604,
+          "radius": 4.549491489461572
+        },
+        {
+          "x": 17.513419555688046,
+          "y": 31.727293997705747,
+          "radius": 4.532772326108981
+        }
+      ]
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.45207499992102385,
+    "candidate_mode": "dense",
+    "accepted": false,
+    "observed_support": 0.9866332497911445,
+    "surface_coverage": 0.6022,
+    "chamfer_mm": 0.9399885345651235,
+    "sampling_floor_mm": 0.867801640946734,
+    "volumetric_iou": 0.9684361251763924,
+    "external_dim_mae_mm": 0.5279211402048531,
+    "external_dimension_errors_mm": {
+      "width": 0.5993722237192998,
+      "depth": 0.6163082386159857,
+      "height": 0.36808295827927395
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.5914302499732003,
+    "volume_mm3": 164929.47812291575
+  },
+  {
+    "seed": 4008,
+    "method": "compact_geometric",
+    "truth_family": "block",
+    "partial": true,
+    "noise_fraction_diagonal": 0.0031920070249328745,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 56.710539122174644,
+        "depth": 62.71659563414339,
+        "height": 48.12479799791247,
+        "thickness": 4.868466436365651
+      },
+      "holes": [
+        {
+          "x": 39.936342277424146,
+          "y": 31.57561236600604,
+          "radius": 4.549491489461572
+        },
+        {
+          "x": 17.513419555688046,
+          "y": 31.727293997705747,
+          "radius": 4.532772326108981
+        }
+      ]
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.2384857920696959,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.9866332497911445,
+    "surface_coverage": 0.6022,
+    "chamfer_mm": 0.9399885345651235,
+    "sampling_floor_mm": 0.867801640946734,
+    "volumetric_iou": 0.9684361251763924,
+    "external_dim_mae_mm": 0.5279211402048531,
+    "external_dimension_errors_mm": {
+      "width": 0.5993722237192998,
+      "depth": 0.6163082386159857,
+      "height": 0.36808295827927395
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.5304097500629723,
+    "volume_mm3": 164929.47812291575
+  },
+  {
+    "seed": 4008,
+    "method": "compact_ranker",
+    "truth_family": "block",
+    "partial": true,
+    "noise_fraction_diagonal": 0.0031920070249328745,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 56.710539122174644,
+        "depth": 62.71659563414339,
+        "height": 48.12479799791247,
+        "thickness": 4.868466436365651
+      },
+      "holes": [
+        {
+          "x": 39.936342277424146,
+          "y": 31.57561236600604,
+          "radius": 4.549491489461572
+        },
+        {
+          "x": 17.513419555688046,
+          "y": 31.727293997705747,
+          "radius": 4.532772326108981
+        }
+      ]
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.19928970793262124,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.9866332497911445,
+    "surface_coverage": 0.6022,
+    "chamfer_mm": 0.9399885345651235,
+    "sampling_floor_mm": 0.867801640946734,
+    "volumetric_iou": 0.9684361251763924,
+    "external_dim_mae_mm": 0.5279211402048531,
+    "external_dimension_errors_mm": {
+      "width": 0.5993722237192998,
+      "depth": 0.6163082386159857,
+      "height": 0.36808295827927395
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.5628361670533195,
+    "volume_mm3": 164929.47812291575
+  },
+  {
+    "seed": 4009,
+    "method": "dense_geometric",
+    "truth_family": "bracket",
+    "partial": false,
+    "noise_fraction_diagonal": 0.002603990848770693,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 58.12287463864485,
+        "depth": 48.47189879015551,
+        "height": 18.65038486229197,
+        "thickness": 3.379923872746117
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 0.2712351669324562,
+    "candidate_mode": "dense",
+    "accepted": true,
+    "observed_support": 0.9924686192468619,
+    "surface_coverage": 0.826,
+    "chamfer_mm": 0.6344778475731712,
+    "sampling_floor_mm": 0.532401840199749,
+    "volumetric_iou": 0.8529411764705882,
+    "external_dim_mae_mm": 0.39968189131011894,
+    "external_dimension_errors_mm": {
+      "width": 0.24298535205554828,
+      "depth": 0.531978442312905,
+      "height": 0.42408187956190346
+    },
+    "thickness_error_mm": 0.45928165236359764,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.3371564169647172,
+    "volume_mm3": 12522.243407827073
+  },
+  {
+    "seed": 4009,
+    "method": "compact_geometric",
+    "truth_family": "bracket",
+    "partial": false,
+    "noise_fraction_diagonal": 0.002603990848770693,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 58.12287464319637,
+        "depth": 48.47189879015551,
+        "height": 18.65038486229197,
+        "thickness": 3.3799238725959952
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 0.1544588750693947,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9924686192468619,
+    "surface_coverage": 0.826,
+    "chamfer_mm": 0.6344778475800918,
+    "sampling_floor_mm": 0.532401840199749,
+    "volumetric_iou": 0.8529411764705882,
+    "external_dim_mae_mm": 0.3996818928272911,
+    "external_dimension_errors_mm": {
+      "width": 0.24298535660706477,
+      "depth": 0.531978442312905,
+      "height": 0.42408187956190346
+    },
+    "thickness_error_mm": 0.45928165221347594,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.39771954191382974,
+    "volume_mm3": 12522.243408280976
+  },
+  {
+    "seed": 4009,
+    "method": "compact_ranker",
+    "truth_family": "bracket",
+    "partial": false,
+    "noise_fraction_diagonal": 0.002603990848770693,
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 58.343383475721346,
+        "depth": 48.63407743158243,
+        "height": 18.883739943329903,
+        "thickness": 2.896024340757268
+      },
+      "holes": []
+    },
+    "predicted_family": "bracket",
+    "runtime_seconds": 0.20227966690436006,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9899581589958159,
+    "surface_coverage": 0.8208,
+    "chamfer_mm": 0.7254444702685378,
+    "sampling_floor_mm": 0.532401840199749,
+    "volumetric_iou": 0.715703893881044,
+    "external_dim_mae_mm": 0.6050294111572375,
+    "external_dimension_errors_mm": {
+      "width": 0.4634941891320423,
+      "depth": 0.6941570837398316,
+      "height": 0.6574369605998385
+    },
+    "thickness_error_mm": 0.024617879625251415,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.3546143750427291,
+    "volume_mm3": 10918.747505084377
+  },
+  {
+    "seed": 4010,
+    "method": "compact_ranker",
+    "truth_family": "enclosure",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0008132015181293683,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 45.29716891306734,
+        "depth": 39.7594048505543,
+        "height": 52.723739651825746,
+        "thickness": 7.556352915429233
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 0.1580604169284925,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.9924937447873228,
+    "surface_coverage": 0.6134,
+    "chamfer_mm": 0.7721027843979165,
+    "sampling_floor_mm": 0.7683715972003591,
+    "volumetric_iou": 0.9810732370013585,
+    "external_dim_mae_mm": 0.13786266949859774,
+    "external_dimension_errors_mm": {
+      "width": 0.1552487184069946,
+      "depth": 0.1426550775971407,
+      "height": 0.11568421249165795
+    },
+    "thickness_error_mm": 0.0827787063585923,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.254837041022256,
+    "volume_mm3": 61352.68872524703
+  },
+  {
+    "seed": 4010,
+    "method": "compact_geometric",
+    "truth_family": "enclosure",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0008132015181293683,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 45.29716891306734,
+        "depth": 39.7594048505543,
+        "height": 52.723739651825746,
+        "thickness": 7.556352915429233
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 0.1561017920030281,
+    "candidate_mode": "learned_compact",
+    "accepted": false,
+    "observed_support": 0.9924937447873228,
+    "surface_coverage": 0.6134,
+    "chamfer_mm": 0.7721027843979165,
+    "sampling_floor_mm": 0.7683715972003591,
+    "volumetric_iou": 0.9810732370013585,
+    "external_dim_mae_mm": 0.13786266949859774,
+    "external_dimension_errors_mm": {
+      "width": 0.1552487184069946,
+      "depth": 0.1426550775971407,
+      "height": 0.11568421249165795
+    },
+    "thickness_error_mm": 0.0827787063585923,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.221567792003043,
+    "volume_mm3": 61352.68872524703
+  },
+  {
+    "seed": 4010,
+    "method": "dense_geometric",
+    "truth_family": "enclosure",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0008132015181293683,
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 45.29716891309685,
+        "depth": 39.75940485082908,
+        "height": 52.723739651825746,
+        "thickness": 7.556352915547064
+      },
+      "holes": []
+    },
+    "predicted_family": "enclosure",
+    "runtime_seconds": 0.2184850829653442,
+    "candidate_mode": "dense",
+    "accepted": false,
+    "observed_support": 0.9924937447873228,
+    "surface_coverage": 0.6134,
+    "chamfer_mm": 0.7721027843979549,
+    "sampling_floor_mm": 0.7683715972003591,
+    "volumetric_iou": 0.9810732370013585,
+    "external_dim_mae_mm": 0.13786266960002772,
+    "external_dimension_errors_mm": {
+      "width": 0.15524871843650345,
+      "depth": 0.14265507787192178,
+      "height": 0.11568421249165795
+    },
+    "thickness_error_mm": 0.08277870647642338,
+    "family_correct": true,
+    "hole_count_correct": null,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.2559536669868976,
+    "volume_mm3": 61352.68872622898
+  },
+  {
+    "seed": 4011,
+    "method": "dense_geometric",
+    "truth_family": "block",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0013359041702475571,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 31.72225785461202,
+        "depth": 76.32128806057615,
+        "height": 40.449008151403454,
+        "thickness": 3.1987835264575404
+      },
+      "holes": [
+        {
+          "x": 22.237446449144073,
+          "y": 38.26849965105897,
+          "radius": 2.946906423485802
+        },
+        {
+          "x": 9.612383331192456,
+          "y": 38.128803088328965,
+          "radius": 3.0140175158172298
+        }
+      ]
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.2411738329101354,
+    "candidate_mode": "dense",
+    "accepted": true,
+    "observed_support": 0.9941520467836257,
+    "surface_coverage": 0.753,
+    "chamfer_mm": 0.7376250017052303,
+    "sampling_floor_mm": 0.72863425532865,
+    "volumetric_iou": 0.9833813699638192,
+    "external_dim_mae_mm": 0.20265939176030182,
+    "external_dimension_errors_mm": {
+      "width": 0.25027163392358176,
+      "depth": 0.15689313418999973,
+      "height": 0.200813407167324
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.5127530000172555,
+    "volume_mm3": 95672.50212301553
+  },
+  {
+    "seed": 4011,
+    "method": "compact_ranker",
+    "truth_family": "block",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0013359041702475571,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 31.72225785461202,
+        "depth": 76.32128806057615,
+        "height": 40.449008151403454,
+        "thickness": 3.1987835264575404
+      },
+      "holes": [
+        {
+          "x": 22.237446449144073,
+          "y": 38.26849965105897,
+          "radius": 2.946906423485802
+        },
+        {
+          "x": 9.612383331192456,
+          "y": 38.128803088328965,
+          "radius": 3.0140175158172298
+        }
+      ]
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.1814630830194801,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9941520467836257,
+    "surface_coverage": 0.753,
+    "chamfer_mm": 0.7376250017052303,
+    "sampling_floor_mm": 0.72863425532865,
+    "volumetric_iou": 0.9833813699638192,
+    "external_dim_mae_mm": 0.20265939176030182,
+    "external_dimension_errors_mm": {
+      "width": 0.25027163392358176,
+      "depth": 0.15689313418999973,
+      "height": 0.200813407167324
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.518564207945019,
+    "volume_mm3": 95672.50212301553
+  },
+  {
+    "seed": 4011,
+    "method": "compact_geometric",
+    "truth_family": "block",
+    "partial": false,
+    "noise_fraction_diagonal": 0.0013359041702475571,
+    "spec": {
+      "family": "block",
+      "parameters": {
+        "width": 31.72225785461202,
+        "depth": 76.32128806057615,
+        "height": 40.449008151403454,
+        "thickness": 3.1987835264575404
+      },
+      "holes": [
+        {
+          "x": 22.237446449144073,
+          "y": 38.26849965105897,
+          "radius": 2.946906423485802
+        },
+        {
+          "x": 9.612383331192456,
+          "y": 38.128803088328965,
+          "radius": 3.0140175158172298
+        }
+      ]
+    },
+    "predicted_family": "block",
+    "runtime_seconds": 0.19382050004787743,
+    "candidate_mode": "learned_compact",
+    "accepted": true,
+    "observed_support": 0.9941520467836257,
+    "surface_coverage": 0.753,
+    "chamfer_mm": 0.7376250017052303,
+    "sampling_floor_mm": 0.72863425532865,
+    "volumetric_iou": 0.9833813699638192,
+    "external_dim_mae_mm": 0.20265939176030182,
+    "external_dimension_errors_mm": {
+      "width": 0.25027163392358176,
+      "depth": 0.15689313418999973,
+      "height": 0.200813407167324
+    },
+    "thickness_error_mm": null,
+    "family_correct": true,
+    "hole_count_correct": true,
+    "cad_valid": true,
+    "editable": true,
+    "validation_seconds": 0.5204026660649106,
+    "volume_mm3": 95672.50212301553
+  }
+]

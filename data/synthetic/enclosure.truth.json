@@ -1,0 +1,14 @@
+{
+  "source_kind": "original procedural fixture",
+  "units": "mm",
+  "spec": {
+    "family": "enclosure",
+    "parameters": {
+      "width": 90.0,
+      "depth": 65.0,
+      "height": 35.0,
+      "thickness": 4.0
+    },
+    "holes": []
+  }
+}

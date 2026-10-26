@@ -1,0 +1,215 @@
+{
+  "spec": {
+    "family": "block",
+    "parameters": {
+      "width": 200.1053982815199,
+      "depth": 54.06630371038161,
+      "height": 279.38741197533386,
+      "thickness": 5.552604972800001
+    },
+    "holes": []
+  },
+  "metrics": {
+    "observed_rmse_mm": 1.9837417176960155,
+    "chamfer_mm": 2.463450806924355,
+    "observed_support": 0.948,
+    "surface_coverage": 0.9966,
+    "accepted": true,
+    "volumetric_iou": null,
+    "dimensional_error_mm": null,
+    "validity": true,
+    "valid": true,
+    "volume_mm3": 3022681.0216528582,
+    "solid_count": 1,
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max": [
+        200.1053982815199,
+        54.06630371038161,
+        279.38741197533386
+      ],
+      "size": [
+        200.1053982815199,
+        54.06630371038161,
+        279.38741197533386
+      ]
+    },
+    "scan_to_cad_sampled_chamfer_mm": 2.6780069935271174,
+    "ground_truth_volume_iou": null,
+    "independent_dimensional_error_mm": null
+  },
+  "uncertainty": [
+    {
+      "feature": "External extents",
+      "status": "observed",
+      "detail": "Robust scan bounds fitted to observed surface evidence; not an independent dimensional measurement."
+    },
+    {
+      "feature": "Wall thickness / feature family",
+      "status": "inferred",
+      "detail": "Selected within the bounded CAD grammar; verify with a physical measurement."
+    },
+    {
+      "feature": "Hidden surfaces and internal features",
+      "status": "unknown",
+      "detail": "Unseen geometry cannot be recovered from these points. Candidate completes the chosen template."
+    },
+    {
+      "feature": "Absolute scale",
+      "status": "calibrated",
+      "detail": "Declared input units or maximum-extent reference used."
+    }
+  ],
+  "candidates": [
+    {
+      "family": "block",
+      "score": 0.0141633535517925,
+      "spec": {
+        "family": "block",
+        "parameters": {
+          "width": 200.1053982815199,
+          "depth": 54.06630371038161,
+          "height": 279.38741197533386,
+          "thickness": 5.552604972800001
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "enclosure",
+      "score": 0.014173697356595575,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 201.917036404,
+          "depth": 55.526049728000004,
+          "height": 280.97173792000007,
+          "thickness": 1.943
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "enclosure",
+      "score": 0.014335607537998014,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 200.93202162860757,
+          "depth": 54.65890134491498,
+          "height": 292.209937972071,
+          "thickness": 3.0065805880411642
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "enclosure",
+      "score": 0.01435455794847943,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 201.917036404,
+          "depth": 55.526049728000004,
+          "height": 280.97173792000007,
+          "thickness": 3.332
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "block",
+      "score": 0.015853157114112698,
+      "spec": {
+        "family": "block",
+        "parameters": {
+          "width": 201.917036404,
+          "depth": 55.526049728000004,
+          "height": 280.97173792000007,
+          "thickness": 5.552604972800001
+        },
+        "holes": []
+      }
+    },
+    {
+      "family": "enclosure",
+      "score": 0.017254898670491483,
+      "spec": {
+        "family": "enclosure",
+        "parameters": {
+          "width": 201.917036404,
+          "depth": 55.526049728000004,
+          "height": 280.97173792000007,
+          "thickness": 5.553
+        },
+        "holes": []
+      }
+    }
+  ],
+  "warnings": [
+    "Single-solid reconstruction within a limited grammar; no material, load capacity, fit or mechanical function is established.",
+    "The filled block is an external envelope hypothesis. Actual shell, contents and hidden structure are unknown. No independent caliper ground truth exists."
+  ],
+  "provenance": {
+    "transform": {
+      "rotation": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "translation": [
+        -100.82130974,
+        -27.638344652,
+        0.14314762
+      ],
+      "pca_center": null,
+      "scale": 1.0,
+      "pca_alignment": false,
+      "input_units": "mm",
+      "calibrated": true,
+      "reference_extent_mm": null,
+      "removed_points": 0
+    },
+    "ranking": "geometric",
+    "ranker_version": null,
+    "refined": true,
+    "learned_proposal": false,
+    "scope": "three-family orthogonal single-solid grammar",
+    "dataset": {
+      "name": "Vans_Cereal_Honey_Nut_Crunch_11_oz_box",
+      "archive_sha256": "31a5acdad9f8f05b186a8430d09982e5f156a02846eb9fa2b7f69ffb78d0ad1d",
+      "intended_use": "Closed-cuboid envelope fit. Cardboard, folded edges, and bowing are outside the ideal block grammar.",
+      "owner": "GoogleResearch",
+      "copyright": "Copyright 2020 Google LLC.",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_url": "https://app.gazebosim.org/GoogleResearch/fuel/models/Vans_Cereal_Honey_Nut_Crunch_11_oz_box",
+      "archive_url": "https://fuel.gazebosim.org/1.0/GoogleResearch/models/Vans_Cereal_Honey_Nut_Crunch_11_oz_box/1/Vans_Cereal_Honey_Nut_Crunch_11_oz_box.zip",
+      "version": 1,
+      "mesh_sha256": "8e877cb87f4914f967f51b1cad73e9b83a4bfc4ee8f9cdbb31330d8f7370e3af",
+      "xyz_sha256": "d1d12d6111f84494d87c9f50282f75c86f88a02466282458b20ea38700347aa1",
+      "processing": "Area-weighted surface sampling of published processed OBJ scan mesh; 12000 samples; NumPy default_rng seed 20261025; coordinates multiplied by 1000 from SDF SI metres to mm. No denoising, alignment, or fitting applied.",
+      "physical_capture_evidence": "https://research.google/blog/scanned-objects-by-google-research-a-dataset-of-3d-scanned-common-household-items/",
+      "independent_measured_dimensions_mm": null,
+      "limits": "Published mesh is a simplified processed physical scan, not raw sensor input. Reconstructed distances are scan-relative; manufacturing accuracy and hidden structure are unverified. Packaging shell thickness and material are unknown."
+    }
+  },
+  "runtime_seconds": 3.455703750019893,
+  "units": "mm"
+}

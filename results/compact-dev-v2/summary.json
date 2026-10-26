@@ -1,0 +1,199 @@
+{
+  "schema_version": 2,
+  "split": "dev",
+  "test_cases": 12,
+  "dataset": "Same authored procedural grammar, fresh random dimensions/acquisition seeds",
+  "seeds": [
+    4000,
+    4001,
+    4002,
+    4003,
+    4004,
+    4005,
+    4006,
+    4007,
+    4008,
+    4009,
+    4010,
+    4011
+  ],
+  "test_sha256": "261c958bee74a7076bbbd86ffbfddaab2c57489dd726b26064721a358aa7c7fc",
+  "design": "Dense deterministic thickness search versus learned thickness x {0.85,1,1.15}; same block/bore proposals, evidence and refinement. Fixed before new test.",
+  "design_history": "v1 fixed test exposed no improvement from adding learned proposals to an already dense search and a regression from its learned ranker. v1 retained as a negative result. v2 tests whether learned proposals replace dense search efficiently.",
+  "methods": {
+    "dense_geometric": {
+      "cases": 12,
+      "completed": 12,
+      "failures": 0,
+      "chamfer_mm_mean": 0.851473378132095,
+      "chamfer_mm_median": 0.8344120138606703,
+      "sampling_floor_mm_mean": 0.8002612826748264,
+      "sampling_floor_mm_median": 0.7495536524915816,
+      "volumetric_iou_mean": 0.9372290464257431,
+      "volumetric_iou_median": 0.9534563498909989,
+      "external_dim_mae_mm_mean": 0.3120871412014058,
+      "external_dim_mae_mm_median": 0.2411636507294208,
+      "thickness_error_mm_mean": 0.25982588293358777,
+      "thickness_error_mm_median": 0.17042748681877629,
+      "runtime_seconds_mean": 1.3322590972238686,
+      "runtime_seconds_median": 0.3192808129824698,
+      "validation_seconds_mean": 0.898306163251012,
+      "validation_seconds_median": 0.4249547084909864,
+      "family_correct_rate": 1.0,
+      "family_correct_denominator": 12,
+      "cad_valid_rate": 1.0,
+      "cad_valid_denominator": 12,
+      "editable_rate": 1.0,
+      "editable_denominator": 12,
+      "hole_count_correct_rate": 1.0,
+      "hole_count_correct_denominator": 4
+    },
+    "compact_geometric": {
+      "cases": 12,
+      "completed": 12,
+      "failures": 0,
+      "chamfer_mm_mean": 0.8514733798953619,
+      "chamfer_mm_median": 0.8344120141288209,
+      "sampling_floor_mm_mean": 0.8002612826748264,
+      "sampling_floor_mm_median": 0.7495536524915816,
+      "volumetric_iou_mean": 0.9372290464257431,
+      "volumetric_iou_median": 0.9534563498909989,
+      "external_dim_mae_mm_mean": 0.31208718397706475,
+      "external_dim_mae_mm_median": 0.2411636146009843,
+      "thickness_error_mm_mean": 0.259825873561145,
+      "thickness_error_mm_median": 0.17042743555556084,
+      "runtime_seconds_mean": 0.9598678507706305,
+      "runtime_seconds_median": 0.18744406255427748,
+      "validation_seconds_mean": 1.4744362883502617,
+      "validation_seconds_median": 0.4269244794268161,
+      "family_correct_rate": 1.0,
+      "family_correct_denominator": 12,
+      "cad_valid_rate": 1.0,
+      "cad_valid_denominator": 12,
+      "editable_rate": 1.0,
+      "editable_denominator": 12,
+      "hole_count_correct_rate": 1.0,
+      "hole_count_correct_denominator": 4
+    },
+    "compact_ranker": {
+      "cases": 12,
+      "completed": 12,
+      "failures": 0,
+      "chamfer_mm_mean": 0.8654595364978374,
+      "chamfer_mm_median": 0.8474478360488151,
+      "sampling_floor_mm_mean": 0.8002612826748264,
+      "sampling_floor_mm_median": 0.7495536524915816,
+      "volumetric_iou_mean": 0.9172505561618759,
+      "volumetric_iou_median": 0.9534563498909989,
+      "external_dim_mae_mm_mean": 0.35635372573974616,
+      "external_dim_mae_mm_median": 0.2411636146009843,
+      "thickness_error_mm_mean": 0.1437258472529881,
+      "thickness_error_mm_median": 0.1473551972081304,
+      "runtime_seconds_mean": 0.4168574339613163,
+      "runtime_seconds_median": 0.20078468741849065,
+      "validation_seconds_mean": 1.0505061214886762,
+      "validation_seconds_median": 0.444010270468425,
+      "family_correct_rate": 1.0,
+      "family_correct_denominator": 12,
+      "cad_valid_rate": 1.0,
+      "cad_valid_denominator": 12,
+      "editable_rate": 1.0,
+      "editable_denominator": 12,
+      "hole_count_correct_rate": 1.0,
+      "hole_count_correct_denominator": 4
+    }
+  },
+  "paired_comparisons": [
+    {
+      "comparison": "compact_geometric minus dense_geometric",
+      "metric": "chamfer_mm",
+      "paired_cases": 12,
+      "mean": 1.7632670323841637e-09,
+      "bootstrap_95_percentile_ci": [
+        5.61819419690283e-11,
+        5.039025998780181e-09
+      ],
+      "interpretation": "Exploratory paired interval over synthetic cases; not a claim about unseen real objects."
+    },
+    {
+      "comparison": "compact_geometric minus dense_geometric",
+      "metric": "volumetric_iou",
+      "paired_cases": 12,
+      "mean": 0.0,
+      "bootstrap_95_percentile_ci": [
+        0.0,
+        0.0
+      ],
+      "interpretation": "Exploratory paired interval over synthetic cases; not a claim about unseen real objects."
+    },
+    {
+      "comparison": "compact_geometric minus dense_geometric",
+      "metric": "runtime_seconds",
+      "paired_cases": 12,
+      "mean": -0.372391246453238,
+      "bootstrap_95_percentile_ci": [
+        -1.2727534060058436,
+        0.3865355146010793
+      ],
+      "interpretation": "Exploratory paired interval over synthetic cases; not a claim about unseen real objects."
+    },
+    {
+      "comparison": "compact_ranker minus dense_geometric",
+      "metric": "chamfer_mm",
+      "paired_cases": 12,
+      "mean": 0.01398615836574249,
+      "bootstrap_95_percentile_ci": [
+        1.8831761844362305e-10,
+        0.03437791975273538
+      ],
+      "interpretation": "Exploratory paired interval over synthetic cases; not a claim about unseen real objects."
+    },
+    {
+      "comparison": "compact_ranker minus dense_geometric",
+      "metric": "volumetric_iou",
+      "paired_cases": 12,
+      "mean": -0.019978490263867082,
+      "bootstrap_95_percentile_ci": [
+        -0.0484990305758059,
+        0.0
+      ],
+      "interpretation": "Exploratory paired interval over synthetic cases; not a claim about unseen real objects."
+    },
+    {
+      "comparison": "compact_ranker minus dense_geometric",
+      "metric": "runtime_seconds",
+      "paired_cases": 12,
+      "mean": -0.9154016632625522,
+      "bootstrap_95_percentile_ci": [
+        -2.246446299849292,
+        -0.09271347619142037
+      ],
+      "interpretation": "Exploratory paired interval over synthetic cases; not a claim about unseen real objects."
+    }
+  ],
+  "software": {
+    "python": "3.12.13",
+    "numpy": "2.5.4",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "source_unchanged_during_run": true,
+  "source_versions": {
+    "objectdna/geometry.py": "5a9223fa635b7e83c32e5315a0115b122527b5e2f9fb0befaf9098e0115376bf",
+    "objectdna/inference.py": "97131c019a6135cb1e8c3022e34d501a9d88e2b6cc445f44e5f2e153be0fd1cc",
+    "objectdna/proposal.py": "7628723d0d89a1d0d93e0ae654f1aa78e2a7fe88fa4c704b38cfc52b5d4c06d1",
+    "objectdna/cad.py": "331473beb26499e427028f2a2b6cb81a5f6e6f8f64db00fbb78870965d34540b",
+    "scripts/benchmark_compact.py": "1ab2f13f1e1673de0c24e239cc903ba556e779f49b9b023b400981c7a546b1f6",
+    "models/proposal.json": "a24ae47b0f13b8eeef0365a2722d967ed0b9787b5c52908431e86ab8fa97bf40",
+    "models/ranker.json": "22b80c0ef9845584b79000faec714f7741ebd171501e51e9ea99c37447dd36ee"
+  },
+  "total_seconds": 86.88032629201189,
+  "limitations": [
+    "Synthetic in-distribution grammar, not unconstrained CAD or verified real-dimensional metrology.",
+    "Proposal network was trained on seeds2000\u20132599; development4000\u20134059; final v2 test10000\u201310047 unused in training/development.",
+    "V2 design changed after v1 diagnostic test9000\u20139047; that old set is never reused for a confirmatory claim.",
+    "Runtime is production reconstruction wall time, excludes cold import and benchmark-only ground-truth/CAD checks; method order randomized per object.",
+    "Chamfer: symmetric unsquared nearest-neighbor distance on independent 7000-point surfaces with measured sampling floor. IoU: 50000-point Monte Carlo.",
+    "CAD validity and 10% width editability measured by actual OpenCascade construction for every successful candidate.",
+    "Exploratory paired bootstrap intervals do not establish real-world superiority or comparison to unrun upstream neural baselines."
+  ]
+}

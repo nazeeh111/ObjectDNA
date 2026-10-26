@@ -1,0 +1,24 @@
+* text=auto eol=lf
+web/dist/** linguist-generated=true
+objectdna/assets/** linguist-generated=true
+results/** linguist-generated=true
+data/** linguist-generated=true
+docs/assets/** linguist-generated=true
+*.png binary
+*.jpg binary
+*.gif binary
+*.mp4 binary
+*.whl binary
+# Preserve exact provenance / staged-resource bytes on every platform.
+data/** -text
+models/*.json -text
+results/** -text
+web/dist/** -text
+objectdna/assets/** -text
+# Generated CAD, plots and retained experiment bytes use upstream serialization.
+results/** -whitespace
+data/** -whitespace
+objectdna/assets/** -whitespace
+web/dist/** -whitespace
+docs/assets/** -whitespace
+web/public/licenses/** -text -whitespace

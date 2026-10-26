@@ -1,0 +1,69 @@
+........................................................................ [ 81%]
+................                                                         [100%]
+=============================== warnings summary ===============================
+work/objectdna-venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  <test-environment>/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:609
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:609: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+    simple_dir = oneOf(["X", "Y", "Z", "XY", "XZ", "YZ"])
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:613
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:613: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+    cqtype = oneOf(
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:616
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:616: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+    cqtype = cqtype.setParseAction(pyparsing_common.upcaseTokens)
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:622
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:622: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+    direction_op = oneOf([">", "<"])
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:625
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:625: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+    center_nth_op = oneOf([">>", "<<"])
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:635
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:635: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+    other_op = oneOf(["|", "#", "+", "-"])
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:638
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:638: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+    named_view = oneOf(["front", "back", "left", "right", "top", "bottom"])
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:763
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:763: PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'
+    delta_op = oneOf(["exc", "except"])
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:770
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:770: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+    atom.setParseAction(atom_callback)
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/selectors.py:793
+  <test-environment>/lib/python3.12/site-packages/cadquery/selectors.py:793: PyparsingDeprecationWarning: 'infixNotation' deprecated - use 'infix_notation'
+    expr = infixNotation(
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/assembly.py:65
+  <test-environment>/lib/python3.12/site-packages/cadquery/assembly.py:65: PyparsingDeprecationWarning: 'delimitedList' deprecated - use 'DelimitedList'
+    Name = delimitedList(
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/assembly.py:67
+  <test-environment>/lib/python3.12/site-packages/cadquery/assembly.py:67: PyparsingDeprecationWarning: 'setResultsName' deprecated - use 'set_results_name'
+    ).setResultsName("name")
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/assembly.py:68
+  <test-environment>/lib/python3.12/site-packages/cadquery/assembly.py:68: PyparsingDeprecationWarning: 'setResultsName' deprecated - use 'set_results_name'
+    Tag = Word(alphas, alphanums + "_").setResultsName("tag")
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/assembly.py:69
+  <test-environment>/lib/python3.12/site-packages/cadquery/assembly.py:69: PyparsingDeprecationWarning: 'setResultsName' deprecated - use 'set_results_name'
+    Selector = _selector_grammar.setResultsName("selector")
+
+work/objectdna-venv/lib/python3.12/site-packages/cadquery/assembly.py:73
+  <test-environment>/lib/python3.12/site-packages/cadquery/assembly.py:73: PyparsingDeprecationWarning: 'setResultsName' deprecated - use 'set_results_name'
+    ).setResultsName("selector_kind")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+88 passed, 16 warnings in 162.45s (0:02:42)

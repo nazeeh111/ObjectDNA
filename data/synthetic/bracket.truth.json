@@ -1,0 +1,14 @@
+{
+  "source_kind": "original procedural fixture",
+  "units": "mm",
+  "spec": {
+    "family": "bracket",
+    "parameters": {
+      "width": 80.0,
+      "depth": 50.0,
+      "height": 44.0,
+      "thickness": 5.0
+    },
+    "holes": []
+  }
+}
