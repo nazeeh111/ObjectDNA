@@ -138,7 +138,7 @@ npm run build
 npm run test:ui
 ```
 
-See [validation evidence](docs/VALIDATION.md), [architecture and coordinate conventions](docs/ARCHITECTURE.md), and [contribution guidance](CONTRIBUTING.md). The [CI workflow](.github/workflows/ci.yml) configures Python tests and the frontend build; live browser checks are separate.
+See [validation evidence](docs/VALIDATION.md), [architecture and coordinate conventions](docs/ARCHITECTURE.md), and [contribution guidance](CONTRIBUTING.md). The [CI workflow](.github/workflows/ci.yml) configures Python tests, the frontend build and portable-wheel verification on Linux and macOS. Linux also runs the browser workflow and WCAG-tagged automated accessibility checks; the targeted mobile capture check is separate.
 
 ## Relationship to upstream work
 
