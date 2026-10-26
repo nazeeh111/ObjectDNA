@@ -62,11 +62,13 @@ jobs:
           trap 'kill "$objectdna_server_pid" 2>/dev/null || true' EXIT
           python -c "import time,urllib.request; exec('for attempt in range(60):\n try:\n  urllib.request.urlopen(\"http://127.0.0.1:8768/api/health\",timeout=2); break\n except OSError:\n  time.sleep(1)\nelse: raise SystemExit(\"Server did not start\")')"
           npm --prefix web run test:ui
+          npm --prefix web run test:a11y
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: failure()
         with:
           name: diagnostics-${{ runner.os }}
           path: |
             server.log
+            web/.cache/accessibility
             ${{ runner.temp }}/objectdna-browser
           retention-days: 7

@@ -1,21 +1,25 @@
 {
-  "wheel_sha256": "6031a22bf35059edef9434412fb520303901acb9c0e4f0bb3a5139d6ada27a11",
-  "imported_module": "<wheel-check>/objectdna/__init__.py",
-  "asset_root": "<wheel-check>/objectdna/assets",
+  "wheel_sha256": "443a34cabf4478ef77b96d3b2a0111c864deae91eefb63087e244f7f4875218f",
+  "verification_command": "python tools/check_wheel.py dist/objectdna-0.1.0-py3-none-any.whl",
+  "bundled_assets": 30,
+  "models": 2,
+  "samples": 5,
   "checks": [
-    "Extracted wheel imports independently from source checkout",
-    "All 29 bundled asset bytes match manifest",
-    "Both trained models available",
-    "Complete prebuilt workbench and all 5 samples served",
-    "Compact learned inference with default geometric ranking produces real valid CAD",
-    "Wheel API STEP export reopens with correct canonical dimensions",
-    "Actual browser-downloaded physical scan STEP reopens valid, one solid, matching shown dimensions"
+    "Wheel imports independently of source checkout",
+    "Every staged resource matches its manifest",
+    "Prebuilt workbench and original third-party licenses served",
+    "Compact inference uses bundled trained weights",
+    "Dimension edit rebuilds one valid solid",
+    "STEP export reopens with requested canonical dimensions"
   ],
-  "browser_step_sha256": "0a4fd4f947bb6346abe2cc5daf166cbfca3e9946c37a67d5250c66fcf1e23636",
-  "browser_step_bounds_mm": [
-    200.10539828152,
-    54.066303710382,
-    279.38741197533
-  ],
-  "independent_cad_interoperability": false
+  "historical_browser_step": {
+    "sha256": "0a4fd4f947bb6346abe2cc5daf166cbfca3e9946c37a67d5250c66fcf1e23636",
+    "bounds_mm": [
+      200.10539828152,
+      54.066303710382,
+      279.38741197533
+    ],
+    "independent_cad_interoperability": false
+  },
+  "hosted_verification": "The Linux and macOS validation jobs repeat the wheel check on the published source."
 }
