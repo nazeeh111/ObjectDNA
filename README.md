@@ -148,6 +148,6 @@ The measured contribution here is **bounded search efficiency from learned param
 
 ## License and citation
 
-Original ObjectDNA source, procedural data, and trained weights use the [MIT license](LICENSE). Bundled Google scan derivatives remain CC BY 4.0. Third-party dependencies and optional upstream checkpoints retain their own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md) and the [code/weight/data license matrix](docs/UPSTREAM_LICENSES.md).
+Original ObjectDNA source, procedural data, and trained weights use the [MIT license](LICENSE). Bundled Google scan derivatives remain CC BY 4.0. Third-party dependencies and optional upstream checkpoints retain their own licenses; see [code/weight/data license matrix](docs/UPSTREAM_LICENSES.md).
 
 Use the repository's [citation metadata](CITATION.cff) when citing this software, and cite upstream methods separately when using them.

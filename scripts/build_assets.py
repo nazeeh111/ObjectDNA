@@ -19,8 +19,7 @@ def sources():
                 if path.is_symlink():
                     raise ValueError(f"Symlinks are not packaged: {path}")
                 result[str(path.relative_to(ROOT))] = path
-    for name in ("LICENSE", "THIRD_PARTY_NOTICES.md"):
-        result[name] = ROOT / name
+    result["LICENSE"] = ROOT / "LICENSE"
     return result
 
 

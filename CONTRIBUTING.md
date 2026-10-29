@@ -34,6 +34,6 @@ Preserve negative results. If a final test influences the next design, treat it 
 
 ## Licensing and attribution
 
-Original contributions use the repository's MIT license. New data, images, code, and weights need traceable provenance and compatible terms. A repository's code license does not automatically cover its checkpoints or datasets. Retain Google Scanned Objects' CC BY 4.0 notices when using the bundled scan derivatives; update [third-party notices](THIRD_PARTY_NOTICES.md) when adding a distributed dependency or asset.
+Original contributions use the repository's MIT license. New data, images, code, and weights need traceable provenance and compatible terms. A repository's code license does not automatically cover its checkpoints or datasets. Retain Google Scanned Objects' CC BY 4.0 notices when using the bundled scan derivatives; update the relevant component license and [license matrix](docs/UPSTREAM_LICENSES.md) when adding a distributed dependency or asset.
 
 Verify staged release resources with `python scripts/build_assets.py --check`. After changing bundled models, data or the workbench, stage a fresh `--out` directory and preserve the previous asset stage before replacing `objectdna/assets`. Portable wheels are checked with `python tools/check_wheel.py dist/objectdna-0.1.0-py3-none-any.whl`.
