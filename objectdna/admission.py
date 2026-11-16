@@ -11,15 +11,27 @@ class BoundedBodyMiddleware:
             return await self.app(scope, receive, send)
 
         async def refuse(status, message):
-            body = ('{"detail":"' + message + '"}').encode('ascii')
-            await send({"type": "http.response.start", "status": status,
-                        "headers": [(b"content-type", b"application/json"),
-                                    (b"content-length", str(len(body)).encode('ascii'))]})
+            body = ('{"detail":"' + message + '"}').encode("ascii")
+            await send(
+                {
+                    "type": "http.response.start",
+                    "status": status,
+                    "headers": [
+                        (b"content-type", b"application/json"),
+                        (b"content-length", str(len(body)).encode("ascii")),
+                    ],
+                }
+            )
             await send({"type": "http.response.body", "body": body})
 
-        lengths = [value.strip() for key, value in scope.get("headers", [])
-                   if key.lower() == b"content-length"]
-        if len(lengths) > 1 or (lengths and (not lengths[0] or len(lengths[0]) > 20 or not lengths[0].isdigit())):
+        lengths = [
+            value.strip()
+            for key, value in scope.get("headers", [])
+            if key.lower() == b"content-length"
+        ]
+        if len(lengths) > 1 or (
+            lengths and (not lengths[0] or len(lengths[0]) > 20 or not lengths[0].isdigit())
+        ):
             return await refuse(400, "Invalid Content-Length.")
         declared = int(lengths[0]) if lengths else None
         if declared is not None and declared > self.limit:

@@ -11,12 +11,14 @@ def main():
         prog="objectdna",
         description="Fit a bounded construction hypothesis to prealigned scan geometry, then inspect and edit actual CAD.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="\n".join([
-            "First run: objectdna serve, then choose the labeled synthetic bracket.",
-            "Save project retains normalized points and edit history; evidence-summary JSON is not reopenable.",
-            "Canonical axes: X width, Y depth, Z height. Metric CAD export requires supplied scale.",
-            "No physical reconstruction accuracy or manufacturing fitness is established.",
-        ]),
+        epilog="\n".join(
+            [
+                "First run: objectdna serve, then choose the labeled synthetic bracket.",
+                "Save project retains normalized points and edit history; evidence-summary JSON is not reopenable.",
+                "Canonical axes: X width, Y depth, Z height. Metric CAD export requires supplied scale.",
+                "No physical reconstruction accuracy or manufacturing fitness is established.",
+            ]
+        ),
     )
     parser.add_argument("--version", action="version", version=f"ObjectDNA {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -24,14 +26,27 @@ def main():
     serve.add_argument("--port", type=int, default=8768)
     fit = sub.add_parser("fit", help="Reconstruct data-only point cloud or mesh")
     fit.add_argument("input", type=Path)
-    fit.add_argument("--out", type=Path, required=True,
-                     help="New output directory for evidence and, with metric scale, CAD artifacts")
-    fit.add_argument("--units", choices=["mm", "m", "unknown"], default="unknown",
-                     help="Input coordinate units; unknown stays relative and blocks metric CAD export")
-    fit.add_argument("--reference-extent-mm", type=float,
-                     help="Measured maximum bounding-box extent in mm; scale is supplied, never inferred")
     fit.add_argument(
-        "--align", action="store_true", help="Approximate PCA alignment may swap or flip axes; prealignment is preferred"
+        "--out",
+        type=Path,
+        required=True,
+        help="New output directory for evidence and, with metric scale, CAD artifacts",
+    )
+    fit.add_argument(
+        "--units",
+        choices=["mm", "m", "unknown"],
+        default="unknown",
+        help="Input coordinate units; unknown stays relative and blocks metric CAD export",
+    )
+    fit.add_argument(
+        "--reference-extent-mm",
+        type=float,
+        help="Measured maximum bounding-box extent in mm; scale is supplied, never inferred",
+    )
+    fit.add_argument(
+        "--align",
+        action="store_true",
+        help="Approximate PCA alignment may swap or flip axes; prealignment is preferred",
     )
     fit.add_argument("--ranking", choices=["learned", "geometric"], default="geometric")
     fit.add_argument("--no-refine", action="store_true")
@@ -41,10 +56,16 @@ def main():
         type=Path,
         help="Directory with proposal.json and optional ranker.json; defaults to bundled weights",
     )
-    create = sub.add_parser("project-create", help="Save a bounded project from a fit evidence record")
-    create.add_argument("evidence", type=Path, help="Full evidence.json from a CLI fit, including source points")
+    create = sub.add_parser(
+        "project-create", help="Save a bounded project from a fit evidence record"
+    )
+    create.add_argument(
+        "evidence", type=Path, help="Full evidence.json from a CLI fit, including source points"
+    )
     create.add_argument("--out", type=Path, required=True)
-    opened = sub.add_parser("project-open", help="Validate/recompute a saved project and print evidence JSON")
+    opened = sub.add_parser(
+        "project-open", help="Validate/recompute a saved project and print evidence JSON"
+    )
     opened.add_argument("project", type=Path)
     edited = sub.add_parser("project-edit", help="Apply a data-only spec and save a new project")
     edited.add_argument("project", type=Path)
@@ -52,8 +73,12 @@ def main():
     edited.add_argument("--out", type=Path, required=True)
     exported = sub.add_parser("project-export", help="Recompute and export one CAD artifact")
     exported.add_argument("project", type=Path)
-    exported.add_argument("--format", choices=["step", "stl", "py", "json"], required=True,
-                          help="Individual artifact; JSON is evidence summary, not a reopenable project")
+    exported.add_argument(
+        "--format",
+        choices=["step", "stl", "py", "json"],
+        required=True,
+        help="Individual artifact; JSON is evidence summary, not a reopenable project",
+    )
     exported.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "serve":
@@ -61,7 +86,14 @@ def main():
 
         uvicorn.run("objectdna.api:app", host="127.0.0.1", port=args.port)
     elif args.command.startswith("project-"):
-        from .project import decode_project, restore_project, encode_project, write_exclusive, MAX_PROJECT_BYTES, _unique_pairs
+        from .project import (
+            decode_project,
+            restore_project,
+            encode_project,
+            write_exclusive,
+            MAX_PROJECT_BYTES,
+            _unique_pairs,
+        )
         from .cad import validate_spec, export_file
         import tempfile
         import os
@@ -74,8 +106,13 @@ def main():
             return data
 
         def parse_data(data):
-            return json.loads(data.decode("utf-8"), object_pairs_hook=_unique_pairs,
-                              parse_constant=lambda _: (_ for _ in ()).throw(ValueError("Nonfinite JSON is forbidden.")))
+            return json.loads(
+                data.decode("utf-8"),
+                object_pairs_hook=_unique_pairs,
+                parse_constant=lambda _: (_ for _ in ()).throw(
+                    ValueError("Nonfinite JSON is forbidden.")
+                ),
+            )
 
         try:
             if args.command == "project-create":
@@ -92,18 +129,51 @@ def main():
                     project["history"].append({"kind": "edited", "spec": spec})
                     import hashlib
                     from .project import _dump
-                    project["project_sha256"] = hashlib.sha256(_dump({k: v for k, v in project.items() if k != "project_sha256"})).hexdigest()
+
+                    project["project_sha256"] = hashlib.sha256(
+                        _dump({k: v for k, v in project.items() if k != "project_sha256"})
+                    ).hexdigest()
                 result = restore_project(project)
                 if args.command == "project-open":
-                    print(json.dumps({"project_sha256": result["project_source_sha256"], "units": result["units"], "spec": result["spec"], "metrics": result["metrics"], "provenance": result["provenance"], "history": result["project_history"]}, allow_nan=False))
+                    print(
+                        json.dumps(
+                            {
+                                "project_sha256": result["project_source_sha256"],
+                                "units": result["units"],
+                                "spec": result["spec"],
+                                "metrics": result["metrics"],
+                                "provenance": result["provenance"],
+                                "history": result["project_history"],
+                            },
+                            allow_nan=False,
+                        )
+                    )
                 elif args.command == "project-edit":
                     write_exclusive(args.out, encode_project(result))
-                    print(json.dumps({"project": str(args.out), "history_entries": len(result["project_history"])}))
+                    print(
+                        json.dumps(
+                            {
+                                "project": str(args.out),
+                                "history_entries": len(result["project_history"]),
+                            }
+                        )
+                    )
                 else:
                     if result["units"] != "mm" and args.format != "json":
                         raise ValueError("Metric export requires calibrated units.")
                     if args.format == "json":
-                        data = json.dumps({"units": result["units"], "spec": result["spec"], "metrics": result["metrics"], "provenance": result["provenance"]}, allow_nan=False).encode() + b"\n"
+                        data = (
+                            json.dumps(
+                                {
+                                    "units": result["units"],
+                                    "spec": result["spec"],
+                                    "metrics": result["metrics"],
+                                    "provenance": result["provenance"],
+                                },
+                                allow_nan=False,
+                            ).encode()
+                            + b"\n"
+                        )
                         write_exclusive(args.out, data)
                     else:
                         with tempfile.TemporaryDirectory(prefix="objectdna-project-") as directory:
@@ -164,7 +234,10 @@ def main():
         except (ValueError, OSError) as exc:
             parser.exit(2, f"objectdna: {exc}\n")
         except KeyboardInterrupt:
-            parser.exit(130, "objectdna: canceled. Inspect the output directory before retrying; choose a fresh destination.\n")
+            parser.exit(
+                130,
+                "objectdna: canceled. Inspect the output directory before retrying; choose a fresh destination.\n",
+            )
 
 
 if __name__ == "__main__":

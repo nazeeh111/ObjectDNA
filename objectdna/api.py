@@ -199,7 +199,9 @@ def edit(body: Edit):
     result = lookup(body.id)
     try:
         spec = validate_spec(body.spec)
-        history = result.get("project_history") or [{"kind": "inferred", "spec": copy.deepcopy(result["spec"])}]
+        history = result.get("project_history") or [
+            {"kind": "inferred", "spec": copy.deepcopy(result["spec"])}
+        ]
         if len(history) >= 128:
             raise ValueError("Project edit history has reached its 128-entry limit.")
         result["project_history"] = history + [{"kind": "edited", "spec": copy.deepcopy(spec)}]
@@ -237,9 +239,14 @@ def edit(body: Edit):
 @app.get("/api/project/{id}")
 def download_project(id: str):
     from .project import encode_project
+
     try:
         data = encode_project(lookup(id))
-        return Response(data, media_type="application/json", headers={"Content-Disposition": 'attachment; filename="objectdna-project.json"'})
+        return Response(
+            data,
+            media_type="application/json",
+            headers={"Content-Disposition": 'attachment; filename="objectdna-project.json"'},
+        )
     except (ValueError, TypeError, KeyError, OverflowError) as exc:
         raise HTTPException(422, str(exc)) from exc
 
@@ -247,6 +254,7 @@ def download_project(id: str):
 @app.post("/api/project/open")
 def open_project(file: UploadFile = File(...)):
     from .project import decode_project, restore_project, MAX_PROJECT_BYTES
+
     try:
         data = file.file.read(MAX_PROJECT_BYTES + 1)
         project = decode_project(data)

@@ -46,7 +46,7 @@ jobs:
       - name: Build and verify portable wheel
         run: |
           python -m pip wheel --no-deps . -w dist
-          python tools/check_wheel.py dist/objectdna-0.1.0-py3-none-any.whl
+          python tools/check_wheel.py dist/objectdna-*.whl
       - name: Install browser
         if: runner.os == 'Linux'
         run: npx playwright install --with-deps chromium
