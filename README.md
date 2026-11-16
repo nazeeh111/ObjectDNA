@@ -11,11 +11,15 @@
 
 ObjectDNA fits **prealigned brackets, open enclosures, and drilled blocks** from point clouds or scanned meshes. Inspect the source/CAD overlay, change dimensions, rebuild the actual solid, and export STEP, STL, CadQuery source, or the evidence record. All fitting runs locally on the CPU. No account, API key, cloud inference, or paid service is required.
 
+The animation above uses a synthetic bracket; the [physical-scan examples](#physical-capture-without-invented-ground-truth) below are processed public meshes without independent dimensional ground truth.
+
 **This release is bounded.** It reconstructs a construction hypothesis within three supported shape families. It does not recover arbitrary objects, hidden structure, materials, tolerances, or mechanical function. The optional photo bridge is unverified end to end; the workbench imports reconstructed geometry, not photos directly.
 
 The [silent walkthrough](docs/assets/walkthrough.mp4) records the real application: reconstruction, overlays, dimension edits, a physical-scan import, STEP export, and a failure case. It samples browser frames at 4 fps and is not a runtime benchmark.
 
 ## Quickstart
+
+Current source is the unreleased **0.1.1.dev0** development generation. `objectdna --version`, the local API and the rebuilt workbench identify it. The linked **0.1.0** wheel and recorded studies retain their original source and capabilities; use this checkout or its newly built wheel for the project workflow below.
 
 Use **Python 3.12**. The repository includes a prebuilt workbench, trained numeric weights, and sample scans; Node is only needed to rebuild the frontend.
 
@@ -35,11 +39,27 @@ Prefer `uv`? Replace the environment/install commands with `uv venv --python 3.1
 
 CadQuery's native dependencies can make the first import slow. Later requests reuse the running process. Use `objectdna serve --port 8770` if port 8768 is occupied. The server binds to loopback and is intended for local workstation use.
 
+### Save and reopen a project
+
+Use **Save project** to download a bounded, data-only JSON project containing the retained normalized points, units and recorded transform, source identity when available, model provenance and edit history. **Open project** validates it and rebuilds the solid, mesh and residuals. The evidence-summary JSON in the export dialog is a separate artifact and is not reopenable as a project. Reopening does not rerun inference or trust saved acceptance; it presents the initial hypothesis and user edits separately. For recalibration, re-import the original scan: normalized points cannot recover the original capture. Digests detect accidental changes but are not signatures or proof of provenance.
+
+From an existing `fit` evidence record, the installed CLI can create and use a project without executing uploaded code:
+
+```sh
+objectdna fit data/synthetic/bracket.xyz --units mm --out fit-output
+objectdna project-create fit-output/evidence.json --out project.json
+objectdna project-open project.json
+objectdna project-edit project.json --spec edited-spec.json --out revised.json
+objectdna project-export revised.json --format step --out revised.step
+```
+
+Each output file is published exclusively and will not replace an existing path. Projects must be finite JSON, at most 25 MiB and 6,000 normalized points, with at most 128 history entries; archives and pickles are not accepted. Local HTTP requests are limited to 26 MiB total, including multipart framing and all fields, whether or not Content-Length is supplied. This is a per-request bound, not a concurrency or upload-time guarantee. Model version information is recorded when available, but model-weight digests are not inferred. A valid solid or a low residual is not proof of accuracy or fabrication readiness.
+
 ### Reconstruct, inspect, edit
 
 1. Start with a labeled synthetic fixture or the licensed cereal-carton scan. The porcelain tray is an intentional outside-grammar example.
 2. Import your scan with known units, or provide its measured **maximum bounding-box extent** in millimetres. Unknown scale stays explicit and blocks metric CAD export.
-3. Compare source points and CAD, inspect residuals and unsupported surfaces, then edit dimensions and rebuild. A dimension edit supplies design intent; it is not a new measurement.
+3. Compare source points and CAD, inspect residuals and unsupported surfaces, then edit dimensions and rebuild. A dimension edit supplies design intent; it is not a new measurement. The canonical frame uses X for width, Y for depth and Z for height; optional PCA alignment can swap or flip axes.
 4. Export the model and keep its evidence record. STEP preserves analytic geometry; CadQuery source and parameter JSON preserve editable construction intent.
 
 | Capability | Verified scope |
@@ -62,6 +82,8 @@ objectdna fit data/real/cereal_box.xyz --units mm --out cereal-envelope
 objectdna fit data/synthetic/enclosure.xyz --units mm \
   --candidate-mode learned_compact --ranking geometric --out my-enclosure
 ```
+
+Expected fit input or export failures exit **2** with a short error. A canceled CLI fit exits **130**. Inspect the requested output directory before retrying: interruption or a later export failure can leave an incomplete artifact folder. Choose a fresh destination and keep original scan bytes independently; a project retains normalized points rather than the original capture.
 
 Existing export folders are preserved. Dense proposals with geometric scoring remain the default; compact learned proposals are selectable in the workbench and CLI. Both use numerical refinement unless disabled.
 

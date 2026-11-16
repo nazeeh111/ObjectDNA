@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "objectdna"
-version = "0.1.0"
+version = "0.1.1.dev0"
 authors = [{name = "Nazeeh Abdul-Hadi"}]
 description = "Evidence-aware scan to editable engineering CAD"
 readme = "README.md"

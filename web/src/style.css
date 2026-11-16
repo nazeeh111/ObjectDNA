@@ -627,3 +627,20 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,
   .viewport-shortcuts { background:#202a35; border-color:#617184; }
   .viewport-shortcuts button { color:#f2c7a5; }
 }
+
+/* Keep the reconstruction identity and evidence readable on narrow screens. */
+@media(max-width:700px){
+  .projectbar{height:auto;align-items:stretch;flex-direction:column;padding:16px 18px;gap:12px}
+  .project-heading h1,.project-heading .source-caption{max-width:none;white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+  .project-heading .source-caption{font-size:11px}
+  .project-meta{gap:8px;flex-wrap:wrap}
+  .project-meta .button{font-size:11px;padding:10px 12px}
+  .metric>span,.metric>p,.evidence-intro p{font-size:11px}
+  .evidence-intro .eyebrow{font-size:9px}
+}
+@media(max-width:400px){
+  .left-panel{display:block}
+  .left-panel .source-section{border-right:0}
+  .evidence-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .metric{min-width:0;overflow-wrap:anywhere}
+}

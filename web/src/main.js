@@ -28,13 +28,13 @@ const label = value => String(value || '').replaceAll('_', ' ').replace(/^./, c 
 
 $('#app').innerHTML = `
 <header class="topbar">
-  <a class="brand" href="/" aria-label="ObjectDNA home"><img src="/logo.svg" alt=""/><span>Object<span class="brand-light">DNA</span></span><span class="version">RESEARCH / 0.1</span></a>
+  <a class="brand" href="/" aria-label="ObjectDNA home"><img src="/logo.svg" alt=""/><span>Object<span class="brand-light">DNA</span></span><span class="version">RESEARCH / ${escape(__OBJECTDNA_VERSION__)}</span></a>
   <div class="top-navigation"><span class="top-active">Workbench</span><a href="/docs" target="_blank" rel="noopener">API reference ${icon('arrow',14)}</a></div>
   <div class="local-state"><span class="status-dot"></span><span id="connection">Connecting locally</span></div>
 </header>
 <div class="projectbar">
   <div class="project-heading"><span class="eyebrow">REVERSE ENGINEERING</span><h1 id="project-title">New reconstruction</h1><p id="project-source" class="source-caption">Prealigned scans · three supported construction families</p></div>
-  <div class="project-meta"><span id="project-tag" class="tag">POINT CLOUD → PARAMETRIC CAD</span><button class="button export-button" id="export-open" disabled>${icon('download')} Export model ${icon('chevron',13)}</button></div>
+  <div class="project-meta"><span id="project-tag" class="tag">POINT CLOUD → PARAMETRIC CAD</span><label class="button" for="project-input">Open project</label><input id="project-input" class="sr-only" type="file" accept=".json,application/json" aria-label="Open saved project"/><button class="button" id="project-save" type="button" disabled>Save project</button><button class="button export-button" id="export-open" disabled>${icon('download')} Export model ${icon('chevron',13)}</button></div>
 </div>
 <div id="error-banner" class="error-banner" role="alert" hidden><div>${icon('info')}<span id="error-message"></span></div><button id="error-close" class="icon-button" aria-label="Dismiss error">${icon('close')}</button></div>
 <main class="workbench">
@@ -98,7 +98,7 @@ $('#app').innerHTML = `
     <section class="panel-section provenance-section"><div class="section-heading"><h2>Source record</h2></div><div id="provenance" class="provenance"><p class="muted">No source loaded.</p></div><div id="warnings" class="warnings"></div></section>
   </aside>
 </main>
-<dialog id="export-dialog" aria-labelledby="export-heading" aria-describedby="export-note"><div class="dialog-heading"><div><span class="eyebrow">TAKE IT FURTHER</span><h2 id="export-heading">Export your reconstruction.</h2></div><button class="icon-button" id="export-close" aria-label="Close export dialog">${icon('close')}</button></div><p>STEP preserves analytic geometry. Keep the CadQuery script or project JSON for editable parameters.</p><div class="export-options"><button data-export="step"><span class="file-format">STEP</span><div><strong>Engineering solid</strong><small>Analytic CAD interchange · .step</small></div>${icon('download')}</button><button data-export="stl"><span class="file-format">STL</span><div><strong>Surface mesh</strong><small>Tessellated geometry · .stl</small></div>${icon('download')}</button><button data-export="py"><span class="file-format">PY</span><div><strong>CadQuery source</strong><small>Editable construction script · .py</small></div>${icon('download')}</button><button data-export="json"><span class="file-format">JSON</span><div><strong>Project record</strong><small>Parameters and reconstruction evidence · .json</small></div>${icon('download')}</button></div><p id="export-note" class="dialog-note" role="status" aria-live="polite">Review inferred features before manufacturing.</p></dialog>
+<dialog id="export-dialog" aria-labelledby="export-heading" aria-describedby="export-note"><div class="dialog-heading"><div><span class="eyebrow">TAKE IT FURTHER</span><h2 id="export-heading">Export your reconstruction.</h2></div><button class="icon-button" id="export-close" aria-label="Close export dialog">${icon('close')}</button></div><p>STEP preserves analytic geometry. Use Save project for a reopenable work session; this dialog exports individual artifacts.</p><div class="export-options"><button data-export="step"><span class="file-format">STEP</span><div><strong>Engineering solid</strong><small>Analytic CAD interchange · .step</small></div>${icon('download')}</button><button data-export="stl"><span class="file-format">STL</span><div><strong>Surface mesh</strong><small>Tessellated geometry · .stl</small></div>${icon('download')}</button><button data-export="py"><span class="file-format">PY</span><div><strong>CadQuery source</strong><small>Editable construction script · .py</small></div>${icon('download')}</button><button data-export="json"><span class="file-format">JSON</span><div><strong>Evidence summary</strong><small>Parameters and reconstruction evidence · .json</small></div>${icon('download')}</button></div><p id="export-note" class="dialog-note" role="status" aria-live="polite">Review inferred features before manufacturing.</p></dialog>
 `;
 
 let result = null;
@@ -129,6 +129,8 @@ function setBusy(value, title = 'Reconstructing geometry') {
   $('#reset-edit').disabled = value || !result;
   document.querySelectorAll('.sample-button').forEach(el => el.disabled = value);
   $('#file-input').disabled = value;
+  $('#project-input').disabled = value;
+  $('#project-save').disabled = value || !result;
   $('#ranking').disabled = value;
   $('#candidate-mode').disabled = value;
   $('#apply-import-settings').disabled=value||!lastFile;
@@ -319,7 +321,7 @@ function renderUncertainty(data) {
 }
 function showResult(data, {edit=false,title}={}) {
   result=data;
-  if(!edit) originalSpec=structuredClone(data.spec);
+  if(!edit) originalSpec=structuredClone(data.project_history?.[0]?.spec || data.spec);
   $('#empty-state').hidden=true;$('#viewport-title').hidden=false;
   $('#project-title').textContent=title||$('#project-title').textContent;
   $('#project-source').textContent=`${label(data.provenance?.source_kind||'Source geometry')} · ${data.units==='mm'?'Metric scale supplied':'Scale unknown'}`;
@@ -331,7 +333,7 @@ function showResult(data, {edit=false,title}={}) {
   $('#support-status').className=`support-status ${data.metrics?.accepted===true?'supported':'low-support'}`;
   $('#support-status').textContent=data.metrics?.accepted!==true ? `Hypothesis · review required${Number.isFinite(support)?` · ${number(support*100,0)}% source support`:''}` : `Geometric match${Number.isFinite(support)?` · ${number(support*100,0)}% source support`:''}`;
   $('#project-tag').textContent=data.units==='relative'?'REFERENCE MEASUREMENT REQUIRED':'SCAN → EDITABLE SOLID';
-  $('#import-settings-note').textContent=lastFile?`Current upload: ${lastFile.name}. Change units or a reference, then apply.`:'Settings apply to uploaded files. Samples use their supplied units.';
+  $('#import-settings-note').textContent=lastFile?`Current upload: ${lastFile.name}. Change units or a reference, then apply.`:data.provenance?.project_reopened?'To recalibrate, import the original scan; the project retains normalized points.':'Settings apply to uploaded files. Samples use their supplied units.';
   renderGeometry(data,edit);renderFeatures(data.spec);renderDimensions(data.spec);renderEvidence(data);renderUncertainty(data);
   setBusy(false);$('#edit-status').textContent=edit?'Solid rebuilt. Source geometry is unchanged.':'Dimensions rebuild after a change.';
   $('.feature-note').textContent='An editable construction hypothesis. Hidden geometry requires your review.';
@@ -361,6 +363,39 @@ async function importFile(file) {
     showResult(data,{title:file.name.replace(/\.[^.]+$/,'')});
   }catch(error){showError(`Import failed: ${error.message}`);setBusy(false);}finally{$('#file-input').value='';}
 }
+async function openProject(file) {
+  if (!file || busy || exporting) return;
+  if (file.size > 25*1024*1024) { showError('Project exceeds the 25 MiB limit.'); $('#project-input').value=''; return; }
+  clearTimeout(editTimer); clearError(); setBusy(true,'Opening and rebuilding project');
+  try {
+    const form=new FormData(); form.append('file',file);
+    const data=await request('/api/project/open',{method:'POST',body:form});
+    selectedSample=null;lastFile=null;lastRequest=null;editSequence++;
+    document.querySelectorAll('.sample-button').forEach(b=>b.classList.remove('selected'));
+    showResult(data,{title:file.name.replace(/\.[^.]+$/,'')});
+    $('#edit-status').textContent='Project reopened. Geometry and residuals were recomputed; review the source overlay.';
+  } catch(error){showError(`Project could not be opened: ${error.message}`);setBusy(false);}
+  finally { $('#project-input').value=''; }
+}
+async function saveProject() {
+  if(!result||busy||exporting)return;
+  clearTimeout(editTimer);
+  if(document.querySelector('#dimension-form input[data-dirty="true"]')) {
+    showError('Apply or reset pending dimension changes before saving the project.');return;
+  }
+  const sourceId=result.id; exporting=true; setBusy(true,'Saving project');
+  try {
+    const response=await fetch(`/api/project/${encodeURIComponent(sourceId)}`);
+    if(!response.ok){let body;try{body=await response.json();}catch{}throw new Error(body?.detail||'Project could not be saved.');}
+    if(!result || result.id!==sourceId)throw new Error('The active model changed while saving. Retry with the current model.');
+    const blob=await response.blob();
+    if(!result || result.id!==sourceId)throw new Error('The active model changed while saving. Retry with the current model.');
+    const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='objectdna-project.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    $('#edit-status').textContent='Project downloaded with normalized source points and edit history.';
+  } catch(error){showError(`Project could not be saved: ${error.message}`);}
+  finally {exporting=false;setBusy(false);}
+}
+
 async function applyEdit(reset=false) {
   if(!result||busy) return;
   clearTimeout(editTimer);clearError();
@@ -383,7 +418,7 @@ function updateExportAvailability(message) {
   const relative=result?.units!=='mm';
   document.querySelectorAll('[data-export]').forEach(button=>{button.disabled=exporting||(relative&&button.dataset.export!=='json');button.title=relative&&button.dataset.export!=='json'?'Supply import units or a reference extent to enable metric export.':'';});
   if(message) $('#export-note').textContent=message;
-  else $('#export-note').textContent=relative?'Metric exports need an absolute scale. Set import units or a reference extent, then apply import settings. Project JSON is available at relative scale.':'Review inferred features before manufacturing. STEP and STL preserve geometry; use CadQuery or project JSON to retain parameters.';
+  else $('#export-note').textContent=relative?'Metric exports need an absolute scale. Set import units or a reference extent, then apply import settings. The evidence summary and saved project are available at relative scale.':'Review inferred features before manufacturing. STEP and STL preserve geometry; use CadQuery or Save project to retain parameters.';
 }
 async function exportModel(format) {
   if(!result||exporting)return;
@@ -413,6 +448,8 @@ function keyboardView(event){
 
 $('#error-close').addEventListener('click',clearError);
 $('#file-input').addEventListener('change',event=>importFile(event.target.files[0]));
+$('#project-input').addEventListener('change',event=>openProject(event.target.files[0]));
+$('#project-save').addEventListener('click',saveProject);
 ['dragover','dragenter'].forEach(type=>$('#dropzone').addEventListener(type,event=>{event.preventDefault();$('#dropzone').classList.add('dragover');}));
 ['dragleave','drop'].forEach(type=>$('#dropzone').addEventListener(type,event=>{event.preventDefault();$('#dropzone').classList.remove('dragover');if(type==='drop')importFile(event.dataTransfer.files[0]);}));
 $('#dimension-form').addEventListener('submit',event=>{event.preventDefault();applyEdit();});

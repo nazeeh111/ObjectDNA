@@ -10,7 +10,7 @@ import time
 import uuid
 import numpy as np
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from starlette.background import BackgroundTask
 from pydantic import BaseModel, Field, ConfigDict
@@ -18,9 +18,11 @@ from .inference import reconstruct, ROOT
 from .geometry import sdf, sample_surface
 from .io import read_points, MAX_BYTES
 from .samples import list_samples, get_sample
+from .admission import BoundedBodyMiddleware
+from . import __version__
 
 app = FastAPI(
-    title="ObjectDNA", version="0.1.0", description="Local evidence-aware scan-to-CAD workbench"
+    title="ObjectDNA", version=__version__, description="Local evidence-aware scan-to-CAD workbench"
 )
 STORE = OrderedDict()
 LOCK = threading.Lock()
@@ -44,6 +46,10 @@ class Edit(BaseModel):
     spec: dict
 
 
+# Bound the actual body before FastAPI/Starlette creates multipart temporary files.
+app.add_middleware(BoundedBodyMiddleware, limit=MAX_BYTES + 1024 * 1024)
+
+
 @app.middleware("http")
 async def bounded_local_request(request: Request, call_next):
     # Prevent hostile websites from silently issuing writes to a loopback server.
@@ -62,10 +68,6 @@ async def bounded_local_request(request: Request, call_next):
     ):
         return __import__("fastapi").responses.JSONResponse(
             {"detail": "Cross-origin requests are disabled."}, status_code=403
-        )
-    if int(request.headers.get("content-length", "0")) > MAX_BYTES + 1024 * 1024:
-        return __import__("fastapi").responses.JSONResponse(
-            {"detail": "Request exceeds 25 MiB import limit."}, status_code=413
         )
     return await call_next(request)
 
@@ -101,7 +103,7 @@ def health():
 
     return {
         "status": "ok",
-        "version": "0.1.0",
+        "version": __version__,
         "ranker_available": load_ranker() is not None,
         "cad_backend": "CadQuery/OpenCascade",
         "photo_reconstruction": "optional external VGGT adapter; not a validated bundled model",
@@ -197,6 +199,10 @@ def edit(body: Edit):
     result = lookup(body.id)
     try:
         spec = validate_spec(body.spec)
+        history = result.get("project_history") or [{"kind": "inferred", "spec": copy.deepcopy(result["spec"])}]
+        if len(history) >= 128:
+            raise ValueError("Project edit history has reached its 128-entry limit.")
+        result["project_history"] = history + [{"kind": "edited", "spec": copy.deepcopy(spec)}]
         result["spec"] = spec
         cloud = np.array(result["source_points"])
         obs = np.abs(sdf(cloud, spec))
@@ -225,6 +231,29 @@ def edit(body: Edit):
         )
         return save(add_cad(result))
     except (ValueError, TypeError, KeyError) as exc:
+        raise HTTPException(422, str(exc)) from exc
+
+
+@app.get("/api/project/{id}")
+def download_project(id: str):
+    from .project import encode_project
+    try:
+        data = encode_project(lookup(id))
+        return Response(data, media_type="application/json", headers={"Content-Disposition": 'attachment; filename="objectdna-project.json"'})
+    except (ValueError, TypeError, KeyError, OverflowError) as exc:
+        raise HTTPException(422, str(exc)) from exc
+
+
+@app.post("/api/project/open")
+def open_project(file: UploadFile = File(...)):
+    from .project import decode_project, restore_project, MAX_PROJECT_BYTES
+    try:
+        data = file.file.read(MAX_PROJECT_BYTES + 1)
+        project = decode_project(data)
+        with CAD_LOCK:
+            result = restore_project(project)
+        return save(result)
+    except (ValueError, TypeError, KeyError, OverflowError, UnicodeError) as exc:
         raise HTTPException(422, str(exc)) from exc
 
 
