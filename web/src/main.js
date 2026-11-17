@@ -111,7 +111,6 @@ let displayMode = 'overlay';
 let editTimer;
 let editSequence = 0;
 let lastRequest = null;
-let exporting = false;
 const state = { renderer: null, scene: null, camera: null, controls: null, model: null, cloud: null, dimensions: null, grid: null, center: new THREE.Vector3(), size: 100 };
 
 function showError(message) {
@@ -136,6 +135,7 @@ function setBusy(value, title = 'Reconstructing geometry') {
   $('#apply-import-settings').disabled=value||!lastFile;
   $('#viewport').setAttribute('aria-busy',String(value));
   document.querySelectorAll('#dimension-form input').forEach(input=>input.disabled=value);
+  updateExportAvailability();
 }
 async function request(path, options = {}) {
   const response = await fetch(path, options);
@@ -364,7 +364,7 @@ async function importFile(file) {
   }catch(error){showError(`Import failed: ${error.message}`);setBusy(false);}finally{$('#file-input').value='';}
 }
 async function openProject(file) {
-  if (!file || busy || exporting) return;
+  if (!file || busy) return;
   if (file.size > 25*1024*1024) { showError('Project exceeds the 25 MiB limit.'); $('#project-input').value=''; return; }
   clearTimeout(editTimer); clearError(); setBusy(true,'Opening and rebuilding project');
   try {
@@ -378,12 +378,12 @@ async function openProject(file) {
   finally { $('#project-input').value=''; }
 }
 async function saveProject() {
-  if(!result||busy||exporting)return;
+  if(!result||busy)return;
   clearTimeout(editTimer);
   if(document.querySelector('#dimension-form input[data-dirty="true"]')) {
     showError('Apply or reset pending dimension changes before saving the project.');return;
   }
-  const sourceId=result.id; exporting=true; setBusy(true,'Saving project');
+  const sourceId=result.id; setBusy(true,'Saving project');
   try {
     const response=await fetch(`/api/project/${encodeURIComponent(sourceId)}`);
     if(!response.ok){let body;try{body=await response.json();}catch{}throw new Error(body?.detail||'Project could not be saved.');}
@@ -393,7 +393,7 @@ async function saveProject() {
     const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='objectdna-project.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
     $('#edit-status').textContent='Project downloaded with normalized source points and edit history.';
   } catch(error){showError(`Project could not be saved: ${error.message}`);}
-  finally {exporting=false;setBusy(false);}
+  finally {setBusy(false);}
 }
 
 async function applyEdit(reset=false) {
@@ -416,20 +416,27 @@ async function applyEdit(reset=false) {
 }
 function updateExportAvailability(message) {
   const relative=result?.units!=='mm';
-  document.querySelectorAll('[data-export]').forEach(button=>{button.disabled=exporting||(relative&&button.dataset.export!=='json');button.title=relative&&button.dataset.export!=='json'?'Supply import units or a reference extent to enable metric export.':'';});
+  document.querySelectorAll('[data-export]').forEach(button=>{button.disabled=busy||!result||(relative&&button.dataset.export!=='json');button.title=relative&&button.dataset.export!=='json'?'Supply import units or a reference extent to enable metric export.':'';});
   if(message) $('#export-note').textContent=message;
   else $('#export-note').textContent=relative?'Metric exports need an absolute scale. Set import units or a reference extent, then apply import settings. The evidence summary and saved project are available at relative scale.':'Review inferred features before manufacturing. STEP and STL preserve geometry; use CadQuery or Save project to retain parameters.';
 }
 async function exportModel(format) {
-  if(!result||exporting)return;
+  if(!result||busy)return;
   if(result.units!=='mm'&&format!=='json'){updateExportAvailability();return;}
-  exporting=true;updateExportAvailability('Preparing export…');
+  clearTimeout(editTimer);
+  if(document.querySelector('#dimension-form input[data-dirty="true"]')) {
+    showError('Apply or reset pending dimension changes before exporting the model.');return;
+  }
+  const source=result;
+  setBusy(true,'Exporting model');updateExportAvailability('Preparing export…');
   try{
-    const response=await fetch(`/api/export/${encodeURIComponent(result.id)}?format=${encodeURIComponent(format)}`);
+    const response=await fetch(`/api/export/${encodeURIComponent(source.id)}?format=${encodeURIComponent(format)}`);
     if(!response.ok){let body;try{body=await response.json();}catch{}throw new Error(body?.detail||'The export could not be generated.');}
-    const blob=await response.blob(); const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=`objectdna-${result.spec.family}.${format}`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-    exporting=false;updateExportAvailability(`${format.toUpperCase()} downloaded. Review inferred features before manufacturing.`);
-  }catch(error){exporting=false;updateExportAvailability(error.message);}
+    const blob=await response.blob();
+    if(!result||result.id!==source.id)throw new Error('The active model changed while exporting. Retry with the current model.');
+    const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=`objectdna-${source.spec.family}.${format}`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    setBusy(false);updateExportAvailability(`${format.toUpperCase()} downloaded. Review inferred features before manufacturing.`);
+  }catch(error){setBusy(false);updateExportAvailability(error.message);}
 }
 function jumpToSection(id){const section=$(id);section.scrollIntoView({block:'start',behavior:'instant'});section.focus({preventScroll:true});}
 function keyboardView(event){
