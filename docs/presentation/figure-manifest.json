@@ -1,0 +1,13 @@
+{
+  "source": "3809e47e6d3c6efc4be4ec457c1075d81f5db59f",
+  "projection": "u=.85x-.65y; v=.35x+.25y-.95z; common scale; all2392points perpanel",
+  "files": {
+    "initial-evidence.json": "92d1bb9ea9da3e22fabfce28e0b0230331769dc4622bef262d6c4517ce528d6f",
+    "edited-evidence.json": "fd7fc47c31142f15fdc75d8f464c6004e418f50f22df1062f5e8d61277856f94",
+    "figure.py": "e73e3c7bb170eecce172af9e18c11e5663b62ed9a9365a4762d80003e4e184ec",
+    "scan-to-edit.svg": "4ecde192a0dfee41eba8fe4f63773438f46e180c5c5b57509e861a3d243e1950",
+    "scan-to-edit-mobile.svg": "7ff693d85c90d97eb03a62285c3a461ab5c33fedf7ddbbe4724cd8469741c2d9",
+    "scan-to-edit.png": "e176a64daf679df407b5cc9089c4c551d437bd6058f49939d5e66e677e9b7d03",
+    "scan-to-edit-mobile.png": "f066cebf3b1c9bad71e846f31a197cf6b31e645f6054ab7481648f6488d2eaa7"
+  }
+}

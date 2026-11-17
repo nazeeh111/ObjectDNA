@@ -1,0 +1,26 @@
+{
+  "directStep": {
+    "valid": true,
+    "solids": 1,
+    "bounds_mm": [
+      90.0,
+      50.181966247804,
+      44.147651829821
+    ],
+    "volume_mm3": 41570.83350942313
+  },
+  "generatedSourceExecutedInFreshDirectory": true,
+  "generatedStepReopened": true,
+  "generatedVolume_mm3": 41570.83350942313,
+  "spec": {
+    "family": "bracket",
+    "parameters": {
+      "width": 90,
+      "depth": 50.181966247804326,
+      "height": 44.14765182982143,
+      "thickness": 5.181228181971121
+    },
+    "holes": []
+  },
+  "stepSHA256": "95da974afd48099fc9127c975e9b4ade725f493d36a0b97210eb91fd561ed577"
+}
