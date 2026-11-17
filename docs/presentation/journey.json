@@ -1,0 +1,143 @@
+{
+  "sourceHead": "3809e47e6d3c6efc4be4ec457c1075d81f5db59f",
+  "initial": {
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 80.07472084740138,
+        "depth": 50.181966247804326,
+        "height": 44.14765182982143,
+        "thickness": 5.181228181971121
+      },
+      "holes": []
+    },
+    "metrics": {
+      "observed_rmse_mm": 0.19820476336645507,
+      "chamfer_mm": 0.7160831223841433,
+      "observed_support": 0.9987458193979933,
+      "surface_coverage": 0.9554,
+      "accepted": true,
+      "volumetric_iou": null,
+      "dimensional_error_mm": null,
+      "validity": true,
+      "valid": true,
+      "volume_mm3": 36986.365429566176,
+      "solid_count": 1,
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          80.07472084740138,
+          50.181966247804326,
+          44.14765182982143
+        ],
+        "size": [
+          80.07472084740138,
+          50.181966247804326,
+          44.14765182982143
+        ]
+      }
+    }
+  },
+  "edited": {
+    "spec": {
+      "family": "bracket",
+      "parameters": {
+        "width": 90,
+        "depth": 50.181966247804326,
+        "height": 44.14765182982143,
+        "thickness": 5.181228181971121
+      },
+      "holes": []
+    },
+    "metrics": {
+      "observed_rmse_mm": 0.3204104230165379,
+      "chamfer_mm": 1.060825931497211,
+      "observed_support": 0.9862040133779264,
+      "surface_coverage": 0.8688,
+      "accepted": false,
+      "volumetric_iou": null,
+      "dimensional_error_mm": null,
+      "validity": true,
+      "valid": true,
+      "volume_mm3": 41570.833509424374,
+      "solid_count": 1,
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          90,
+          50.181966247804326,
+          44.14765182982143
+        ],
+        "size": [
+          90,
+          50.181966247804326,
+          44.14765182982143
+        ]
+      }
+    }
+  },
+  "reopenedExactSpecAndPoints": true,
+  "editIsUserIntent": true,
+  "invalidProjectPreservesModel": true,
+  "exportDialogEscapeRestoresFocus": true,
+  "mobile": {
+    "width": 390,
+    "scroll": 390
+  },
+  "failure": {
+    "spec": {
+      "family": "enclosure",
+      "parameters": {
+        "width": 165.27965546418145,
+        "depth": 311.22912540085855,
+        "height": 32.36187101184017,
+        "thickness": 11.944240181507928
+      },
+      "holes": []
+    },
+    "metrics": {
+      "observed_rmse_mm": 2.9580312882310404,
+      "chamfer_mm": 4.85200786794032,
+      "observed_support": 0.8273333333333334,
+      "surface_coverage": 0.6778,
+      "accepted": false,
+      "volumetric_iou": null,
+      "dimensional_error_mm": null,
+      "validity": true,
+      "valid": true,
+      "volume_mm3": 835173.6545722318,
+      "solid_count": 1,
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          165.27965546418145,
+          311.22912540085855,
+          32.36187101184017
+        ],
+        "size": [
+          165.27965546418145,
+          311.22912540085855,
+          32.36187101184017
+        ]
+      }
+    },
+    "warnings": [
+      "Single-solid reconstruction within a limited grammar; no material, load capacity, fit or mechanical function is established.",
+      "Low evidence support: this candidate is a hypothesis. Inspect residuals and unsupported surfaces before use.",
+      "This is a processed physical surface scan. Absolute dimensional accuracy has no independent caliper ground truth. A block models the outer envelope; shell, contents and mechanical function remain unknown."
+    ]
+  },
+  "errors": []
+}

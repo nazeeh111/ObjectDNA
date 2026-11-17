@@ -7,11 +7,25 @@
   <p><a href="#quickstart">Quickstart</a> · <a href="docs/assets/walkthrough.mp4">Watch the demo</a> · <a href="results/EXPERIMENTS.md">Experiments</a> · <a href="docs/ARCHITECTURE.md">Architecture</a></p>
 </div>
 
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/presentation/scan-to-edit-mobile.png">
+  <img src="docs/presentation/scan-to-edit.png" alt="Actual synthetic bracket scan and fitted CAD at 80.075 mm width beside the same points and an edited 90 mm solid. The edit becomes a user-specified hypothesis; exported STEP and generated CadQuery reopen as one valid solid." width="100%">
+</picture>
+
+**Keep the evidence. Change the design intent.** In this actual current-source journey, editing width from 80.075 to 90 mm leaves all 2,392 retained scan points unchanged. A fresh context reopens the project; the downloaded STEP and generated CadQuery independently rebuild the edited solid. [Inspect the complete worked example, editable model and exact checks](docs/presentation/README.md).
+
+<details>
+<summary>Recorded original workbench walkthrough</summary>
+
 [![ObjectDNA showing an explicitly synthetic bracket scan, CAD overlay, feature tree, dimensions, and evidence](docs/assets/workbench-demo.gif)](docs/assets/walkthrough.mp4)
+
+The original walkthrough remains a separate recording; it is not the source of the new before/after figure.
+
+</details>
 
 ObjectDNA fits **prealigned brackets, open enclosures, and drilled blocks** from point clouds or scanned meshes. Inspect the source/CAD overlay, change dimensions, rebuild the actual solid, and export STEP, STL, CadQuery source, or the evidence record. All fitting runs locally on the CPU. No account, API key, cloud inference, or paid service is required.
 
-The animation above uses a synthetic bracket; the [physical-scan examples](#physical-capture-without-invented-ground-truth) below are processed public meshes without independent dimensional ground truth.
+The recorded animation uses a synthetic bracket; the [physical-scan examples](#physical-capture-without-invented-ground-truth) below are processed public meshes without independent dimensional ground truth.
 
 **This release is bounded.** It reconstructs a construction hypothesis within three supported shape families. It does not recover arbitrary objects, hidden structure, materials, tolerances, or mechanical function. The optional photo bridge is unverified end to end; the workbench imports reconstructed geometry, not photos directly.
 
